@@ -11,4 +11,6 @@ public class Compagnia {
         this.viaggi = viaggi;
         this.treni = treni;
     }
+
+
 }

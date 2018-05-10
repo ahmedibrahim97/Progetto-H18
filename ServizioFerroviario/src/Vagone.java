@@ -12,4 +12,18 @@ public class Vagone {
         this.id = id;
         this.posti = posti;
     }
+
+    public int getTotposto() {
+        return totposto;
+    }
+
+    public TipologiaVagone getTipologia() {
+        return tipologia;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getPosti
 }

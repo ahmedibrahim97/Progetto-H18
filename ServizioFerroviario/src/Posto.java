@@ -1,3 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author cl439380
+ */
 public class Posto {
     private String id;
 
@@ -15,8 +25,8 @@ public class Posto {
 
     @Override
     public String toString() {
-        return "Posto{" +
-                "id='" + id + '\'' +
-                '}';
+        return 
+                "\'" + id + "\'" + "\t";
     }
 }
+

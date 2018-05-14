@@ -11,7 +11,11 @@
 import java.util.ArrayList;
 
 public class Vagone {
-
+    // Renderlo abstract e ereditare tutte le varie tipologie
+    // togliere tipologia
+    // in treno togliere HashMap<TipologiaVagone, Float> costoPosti;
+    // in treno togliere public void impostaPrezzi(float PC, float PS, float SC, float SS)
+    // ultimo perche posso creare con le classi che voglio
     private int totposto;
     private TipologiaVagone tipologia;
     private String id;

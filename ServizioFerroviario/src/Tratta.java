@@ -1,9 +1,11 @@
+import java.util.Date;
+
 public class Tratta {
     private Stazione stazione1;
     private Stazione stazione2;
-    private int durata; //durata in minuti
+    private Date durata; //durata
 
-    public Tratta(Stazione stazione1, Stazione stazione2, int durata) {
+    public Tratta(Stazione stazione1, Stazione stazione2, Date durata) {
         this.stazione1 = stazione1;
         this.stazione2 = stazione2;
         this.durata = durata;
@@ -17,7 +19,7 @@ public class Tratta {
         return stazione2;
     }
 
-    public int getDurata() {
+    public Date getDurata() {
         return durata;
     }
 }

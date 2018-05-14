@@ -8,4 +8,6 @@ public class Registro {
         this.stazioneA = stazioneA;
         this.stazioneP = stazioneP;
     }
+
+
 }

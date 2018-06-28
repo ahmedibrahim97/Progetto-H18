@@ -1,0 +1,88 @@
+body{
+    padding-top: 80px;
+    background-color: #222;
+}
+
+
+
+.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.navbar-nav > li > a {
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.carousel-inner > .item {
+    min-height: 350px;
+    background-size: cover;
+    background-position: center center;
+}
+.jumbotron{
+    box-shadow: 10px 10px 5px #dedede;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+.prenotazioni {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.dove-andare {
+    margin-left: 35px;
+    color: #222;
+    font-size: 18px;
+    height: 44px;
+    line-height: 0px;
+    margin-bottom: 0px;
+    margin-left: 380px;
+}
+
+#destinazione{margin-left:80px }
+
+
+#da,#A{
+    width: 230px;
+    margin-left: 121px;
+}
+
+#testoA{margin-left: 31px; }
+
+
+.ceckbok{
+  position: relative;
+  margin-left:35%;
+  margin-bottom:2%;
+ }
+
+
+
+#boxRitorno{
+  position: relative;
+  margin-left: 20%; }
+
+#dataPartenza,#dataRitorno{
+    position: relative;
+    margin-left: 1%;
+}
+
+#testoDataRitorno{margin-left: 30px;}
+
+#passeggeri,#num_passeggeri{
+    margin-top: 15px;
+    margin-left: 80px;
+}
+
+#num_passeggeri{margin-left: 50px;}
+
+#cerca{
+  position: relative;
+    margin-left:493px ;
+    margin-top: -50px;
+    margin-right: 70px;
+}

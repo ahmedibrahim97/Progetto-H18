@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebApp</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript">
+        <!--
+
+        function campo(a){
+            div = document.getElementById('destinazione')
+            if(a=="Attiva"){
+                div.innerHTML=' <p><label  style="float: left;">Da: </label>\n' +
+                    '                <select  id="da" style="float: left;" name="selProvincia">\n' +
+                    '                    <option value="RM">Roma</option>\n' +
+                    '                    <option value="NA">Napoli</option>\n' +
+                    '                    <option value="TO">Torino</option>\n' +
+                    '                    <option value="MI">Milano</option>\n' +
+                    '                </select>\n' +
+                    '            </p>\n' +
+                    '            <p><label  id="testoA" style="float: left;">A: </label>\n' +
+                    '                <select id="A" name="selProvincia">\n' +
+                    '                    <option value="RM">Roma</option>\n' +
+                    '                    <option value="NA">Napoli</option>\n' +
+                    '                    <option value="TO">Torino</option>\n' +
+                    '                    <option value="MI">Milano</option>\n' +
+                    '                </select> </p>\n' +
+                    '\n' +
+                    '            <form id="data">\n' +
+                    '                <p><label id="testoDataPartenza"  style="float: left;">Data Partenza: </label>\n' +
+                    '                    <input type="text" id="dataPartenza" name="Partenza" value="gg/mm/aaaa"  style="float: left;"></p>\n' +
+                    '                <p><label id="testoDataRitorno"  style="float: left;">Data Ritorno: </label>\n' +
+                    '                    <input  type="text" id="dataRitorno" size="20" name="ritorno" value="gg/mm/aaaa" style="float: left;"  ></p>\n' +
+                    '            </form>'
+
+            }
+            else
+                div.innerHTML='  <p><label  style="float: left;">Da: </label>\n' +
+                    '                <select  id="da" style="float: left;" name="selProvincia">\n' +
+                    '                    <option value="RM">Roma</option>\n' +
+                    '                    <option value="NA">Napoli</option>\n' +
+                    '                    <option value="TO">Torino</option>\n' +
+                    '                    <option value="MI">Milano</option>\n' +
+                    '                </select>\n' +
+                    '            </p>\n' +
+                    '            <p><label  id="testoA" style="float: left;">A: </label>\n' +
+                    '                <select id="A" name="selProvincia">\n' +
+                    '                    <option value="RM">Roma</option>\n' +
+                    '                    <option value="NA">Napoli</option>\n' +
+                    '                    <option value="TO">Torino</option>\n' +
+                    '                    <option value="MI">Milano</option>\n' +
+                    '                </select> </p>\n' +
+                    '\n' +
+                    '            <form id="data">\n' +
+                    '                <p><label id="testoDataPartenza"  style="float: left;">Data Partenza: </label>\n' +
+                    '                    <input type="text" id="dataPartenza" name="Partenza" value="gg/mm/aaaa"  style="float: left;"></p>\n' +
+                    '                <p><label id="testoDataRitorno"  style="float: left;">Data Ritorno: </label>\n' +
+                    '                    <input  type="text" id="dataRitorno" size="20" name="ritorno" value="gg/mm/aaaa" style="float: left;" disabled ></p>\n' +
+                    '            </form>'
+
+        }
+        //-->
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">TrenoApp</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Info</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- carosello -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active" style="background-image: url(img/railway.jpg);">
+
+            <div class="carousel-caption">
+                <h3>Cosa aspetti?</h3>
+
+            </div>
+        </div>
+        <div class="item" style="background-image: url(img/station.jpg);">
+
+            <div class="carousel-caption">
+                <h3>Inserisci la meta...</h3>
+
+            </div>
+        </div>
+        <div class="item" style="background-image: url(img/train.jpg);" >
+
+            <div class="carousel-caption">
+                <h3>...e parti con NOI!</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+</div>
+
+<div class="prenotazioni">
+    <div class="jumbotron">
+        <div class="Etichetta">
+            <label class="dove-andare">
+                Dove vuoi andare?
+            </label>
+        </div>
+
+        <form class="ceckbok">
+            <input id="boxAndata" type="radio" name="gender"  checked onClick="campo('Disattiva');"> Solo Andata<br style="float: left;" >
+            <input id="boxRitorno" type="radio" name="gender"  onClick="campo('Attiva');"> Andata e Ritorno<br>
+
+        </form>
+
+        <form id="destinazione">
+
+            <p><label  style="float: left;">Da: </label>
+                <select  id="da" style="float: left;" name="selProvincia">
+                    <option value="RM">Roma</option>
+                    <option value="NA">Napoli</option>
+                    <option value="TO">Torino</option>
+                    <option value="MI">Milano</option>
+                </select>
+            </p>
+            <p><label  id="testoA" style="float: left;">A: </label>
+                <select id="A" name="selProvincia">
+                    <option value="RM">Roma</option>
+                    <option value="NA">Napoli</option>
+                    <option value="TO">Torino</option>
+                    <option value="MI">Milano</option>
+                </select> </p>
+
+            <form id="data">
+                <p><label id="testoDataPartenza"  style="float: left;">Data Partenza: </label>
+                    <input type="text" id="dataPartenza" name="Partenza" value="gg/mm/aaaa"  style="float: left;"></p>
+                <p><label id="testoDataRitorno"  style="float: left;">Data Ritorno: </label>
+                    <input  type="text" id="dataRitorno" size="20" name="ritorno" value="gg/mm/aaaa" style="float: left;" disabled ></p>
+            </form>
+
+        </form>
+        <p><label  id="passeggeri" style="float: left;">Passegeri: </label>
+            <input type="text" id="num_passeggeri" value="1" size="20"> </p>
+
+
+        <p id="cerca"><a class="btn btn-primary btn-lg btn-block" href="SelezioneTreno.html" role="button">Cerca</a></p>
+    </div>
+
+
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

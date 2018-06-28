@@ -1,0 +1,40 @@
+body{
+    padding-top: 80px;
+    background-color: #222;
+}
+
+
+
+.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.navbar-nav > li > a {
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.carousel-inner > .item {
+    min-height: 350px;
+    background-size: cover;
+    background-position: center center;
+}
+
+#sfondo{
+  background: url("img/verifica.jpg");
+  min-height:200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.conferma {
+
+  max-width: 600px;
+  margin-left: 30%;
+  box-shadow: 10px 10px 5px #dedede;
+  border-radius: 10px 10px 10px 10px;
+
+}

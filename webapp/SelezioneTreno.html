@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SceltaTreno</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style_selezione_treno.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">TrenoApp</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Info</a></li>
+              </ul>
+
+          </div><!-- /.navbar-collapse -->
+
+      </div><!-- /.container-fluid -->
+  </nav>
+
+  <section id="sfondo">
+
+  </section>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Treni disponibili</div>
+  <table class="table">
+     <thead>
+       <tr>
+          <th>#</th>
+          <th>Partenza</th>
+          <th>Destinazione</th>
+          <th>Orario Partenza</th>
+          <th>Orario Arrivo</th>
+          <th>Cambi</th>
+          <th>Compra</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Milano</td>
+          <td>Palermo</td>
+          <td>08:30</td>
+          <td>19:30</td>
+          <td>0</td>
+
+          <td>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Acquista</button>
+
+                <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Procedi all'acquisto</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal">
+                          <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                              <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">Cognome</label>
+                              <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Cognome">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Codice Carta di credito</label>
+                            <div class="col-sm-10">
+                              <input type="password" class="form-control" id="inputPassword3" placeholder="Code">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+
+                              <p class="bottone_shop"><a class="btn btn-info" href="acquistato.html" role="button" style="float: left;">Acquista</a></p>
+                             <button id="button_close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+          </td>
+        </tr>
+         <tr>
+           <th scope="row">2</th>
+
+           <td>Milano</td>
+           <td>Palermo</td>
+           <td>08:30</td>
+           <td>19:30</td>
+           <td>0</td>
+           <td>
+             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Acquista</button>
+
+                 <!-- Modal -->
+                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                     <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                           <h4 class="modal-title" id="myModalLabel">Procedi all'acquisto</h4>
+                         </div>
+                         <div class="modal-body">
+                           <form class="form-horizontal">
+                           <div class="form-group">
+                               <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                               <div class="col-sm-10">
+                                 <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <label for="inputEmail3" class="col-sm-2 control-label">Cognome</label>
+                               <div class="col-sm-10">
+                                 <input type="email" class="form-control" id="inputEmail3" placeholder="Cognome">
+                               </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                             <div class="col-sm-10">
+                               <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                             <div class="col-sm-10">
+                               <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputPassword3" class="col-sm-2 control-label">Codice Carta di credito</label>
+                             <div class="col-sm-10">
+                               <input type="password" class="form-control" id="inputPassword3" placeholder="Code">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="col-sm-offset-2 col-sm-10">
+
+                               <p class="bottone_shop"><a class="btn btn-info" href="acquistato.html" role="button" style="float: left;">Acquista</a></p>
+                              <button id="button_close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                             </div>
+                           </div>
+                         </form>
+                         </div>
+
+                       </div>
+                     </div>
+                   </div>
+           </td>
+         </tr>
+         </tr>
+         <tr>
+           <th scope="row">3</th>
+
+           <td>Milano</td>
+           <td>Palermo</td>
+           <td>08:30</td>
+           <td>19:30</td>
+           <td>0</td>
+           <td>
+             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Acquista</button>
+
+                 <!-- Modal -->
+                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                     <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                           <h4 class="modal-title" id="myModalLabel">Procedi all'acquisto</h4>
+                         </div>
+                         <div class="modal-body">
+                           <form class="form-horizontal">
+                           <div class="form-group">
+                               <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                               <div class="col-sm-10">
+                                 <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <label for="inputEmail3" class="col-sm-2 control-label">Cognome</label>
+                               <div class="col-sm-10">
+                                 <input type="email" class="form-control" id="inputEmail3" placeholder="Cognome">
+                               </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                             <div class="col-sm-10">
+                               <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                             <div class="col-sm-10">
+                               <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <label for="inputPassword3" class="col-sm-2 control-label">Codice Carta di credito</label>
+                             <div class="col-sm-10">
+                               <input type="password" class="form-control" id="inputPassword3" placeholder="Code">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="col-sm-offset-2 col-sm-10">
+
+                               <p class="bottone_shop"><a class="btn btn-info" href="acquistato.html" role="button" style="float: left;">Acquista</a></p>
+                              <button id="button_close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                             </div>
+                           </div>
+                         </form>
+                         </div>
+
+                       </div>
+                     </div>
+                   </div>
+           </td>
+         </tr>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+
+
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

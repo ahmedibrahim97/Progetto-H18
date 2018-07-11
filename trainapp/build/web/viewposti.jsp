@@ -3,15 +3,15 @@
     Created on : 3 juil. 2018, 15:20:08
     Author     : QUENTIN
 --%>
-<%@page import="Controller.Viaggio"%>
-<%@page import="Controller.Tipologia"%>
+<%@page import="Controller.*"%>
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    String[] pos=request.getParameter("param").split("/");
+    String[] pos=session.getAttribute("msg").toString().split("/");
     int num=Integer.parseInt(pos[0]);
-
+   
+    
 
 %>
 <html>
@@ -20,6 +20,7 @@
         <title>Posto</title>
     </head>
     <body>
+        
         <table style="border:1; align:center; margin-bottom:2px;">
             <%
                 int i,j,k;
@@ -30,14 +31,14 @@
                             k=0;
                             out.print("<table border=\"1\" align=\"center\">");
                             out.print("<tr><h1 align=\"center\" >");
-                            out.print("vagone"+(i+1));
+                            out.print("vagone"+servizio.visualizzaposti(num,v).get(i).getNumvagone());
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td>");
@@ -46,7 +47,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td>");
@@ -55,7 +56,7 @@
                                 if(k==2){
                                     out.print("<td>");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td>");
@@ -64,7 +65,7 @@
                                 if(k==3){
                                     out.print("<td>");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td></tr>");
@@ -82,14 +83,14 @@
                             k=0;
                             out.print("<table border=\"1\" align=\"center\">");
                             out.print("<tr><h1 align=\"center\" >");
-                            out.print("vagone"+(i+1));
+                            out.print("vagone"+servizio.visualizzaposti(num,v).get(i).getNumvagone());
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td>");
@@ -98,7 +99,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                    out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     out.print("</td>");
@@ -114,7 +115,7 @@
             
             
             
-            %>
+           %>
             
             
         </table>

@@ -11,14 +11,27 @@ public class Vagone {
     private ArrayList<Posto> posti;
     private Tipologia  tipo;
     private int numeroposti;
+    private int numvagone;
 
     public Vagone(Tipologia tipo,int numeroposti) {
         this.posti = new ArrayList();
         this.tipo = tipo;
         this.numeroposti=numeroposti;
+        this.numvagone=0;
+                
        
     
     }
+
+    public int getNumvagone() {
+        return numvagone;
+    }
+
+    public void setNumvagone(int numvagone) {
+        this.numvagone = numvagone;
+    }
+    
+    
 
     public ArrayList<Posto> getPosti() {
         return posti;

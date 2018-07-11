@@ -23,9 +23,12 @@
         <title>Posto2</title>
     </head>
     <body>
+        <%
+                out.print("<center><h1>");
+                out.print(pos.split("/")[2].split("_")[1]);
+                out.print("</h1></center>");
+        %>
        <%       
-           
-           if(v!=null){
                 out.print("<div>");
                 out.print("<table style=\"border:1; align:center; margin-bottom:2px;\">");
                 int i,j,k;
@@ -35,7 +38,7 @@
                             k=0;
                             out.print("<table border=\"1\" align=\"center\">");
                             out.print("<tr><h1 align=\"center\" >");
-                            out.print("vagone"+(i+1));
+                            out.print("vagone"+servizio.visualizzaposti(num,v).get(i).getNumvagone());
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
@@ -89,7 +92,7 @@
                             k=0;
                             out.print("<table border=\"1\" align=\"center\">");
                             out.print("<tr><h1 align=\"center\" >");
-                            out.print("vagone"+(i+1));
+                            out.print("vagone"+servizio.visualizzaposti(num,v).get(i).getNumvagone());
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
@@ -119,39 +122,8 @@
                     }
                     out.print("</table>");
                     out.print("</div>");
-                }
-                else{
                 
-                    out.print("<div>");
-                    out.print("<center>");
-                    out.print("<h1>Riepilogo</h1>");
-                    out.print("<table>");
-                    out.print("<tr><p>");
-                    out.print(pos.split("/")[2]);
-                    out.print("</p></tr>");
-                    out.print("<tr><p>");
-                    out.print("POSTO: ");
-                    out.print(pos.split("/")[1]);
-                    out.print("</p></tr>");
-                    out.print("<tr><p>");
-                    out.print(pos.split("/")[3]);
-                    out.print("</p></tr>");
-                    out.print("</table>");
-                    out.print("</center>");
-                    out.print("</div>");
-                    out.print("<div>");
-                    out.print("<form action=\"viewcarello.jsp\">");
-                    out.print("<center>");
-                    out.print("<table>");
-                    out.print("<tr>");
-                    out.print("<td colspan=\"5\" style=\"text-align: center\"><input class=\"btn btn-success\" type=\"submit\" value=\"inserisci nel carello\"></td>");
-                    out.print("</tr>");
-                    out.print("</table>");    
-                    out.print("</center>"); 
-                    out.print("</form>");    
-                    out.print("</div>");
                 
-                }   
          
             %>
      

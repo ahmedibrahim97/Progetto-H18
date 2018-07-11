@@ -18,7 +18,8 @@ public class Servizioferrovario {
     private Itinerario i2;
     private Viaggio v1;
     private Viaggio v2;
-    private Prenotazione preno;
+    private ArrayList<String> posti;
+    
 
   
 
@@ -26,24 +27,21 @@ public class Servizioferrovario {
         
         this.compagnie=new ArrayList();
         this.itinerari=new ArrayList();
+        this.posti=new ArrayList();
         this.stazioneincroccio=null;
         this.i1=null;
         this.i2=null;
         this.v1=null;
         this.v2=null;
-        this.preno=null;
-
-    }
-
-    public Prenotazione getPreno() {
-        return preno;
-    }
-
-    public void setPreno(Prenotazione preno) {
-        this.preno = preno;
-    }
     
-                           
+
+    }
+
+    public ArrayList<String> getPosti() {
+        return posti;
+    }
+
+                       
             
     public ArrayList<Compagnia> getCompagnie() {
         return compagnie;
@@ -166,7 +164,7 @@ public class Servizioferrovario {
                                         viag[l]=viag[l].concat(str.format(viaggi1.get(l).getData())+"\t");
                                         viag[l]=viag[l].concat("_"+stazioneincroccio+" >>> "+p.getStazionearrivo()+" "+str.format(viaggi2.get(m).getData())+"-");
                                         viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()+i2.calcolodurata(stazioneincroccio,p.getStazionearrivo()));
-                                        viag[l]=viag[l].concat(str.format(viaggi2.get(m).getData())+"\t"+viaggi2.get(m).getCodviaggio().split("-")[0]);
+                                        viag[l]=viag[l].concat(str.format(viaggi2.get(m).getData())+"_"+viaggi2.get(m).getCodviaggio().split("-")[0]);
                                         viaggip.add(viaggi1.get(l));
                                         viaggia.add(viaggi2.get(m));
                                         break;

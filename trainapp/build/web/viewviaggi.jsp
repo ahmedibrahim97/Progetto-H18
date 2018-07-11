@@ -11,23 +11,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    String stp=request.getParameter("partenza");
-    String sta=request.getParameter("arrivo");
-    String[] datap=request.getParameter("dataAndata").split("/");
-   // String[] datar=request.getParameter("dataRitorno").split("/");
-    Date dp=new Date(Integer.parseInt(datap[2])-1900,Integer.parseInt(datap[1]),Integer.parseInt(datap[0]));
-   // Date dr=new Date(Integer.parseInt(datar[2])-1900,Integer.parseInt(datar[1]),Integer.parseInt(datar[0]));
 
-    String mod=request.getParameter("modalita");
     Tester t=new Tester();
     t.inits();
     servizio.setCompagnie(t.getCompagnie());
     servizio.setItinerari(t.getI());
-    
-    Prenotazione pr=new Prenotazione(stp,sta,dp);
-    pr.setNumadulti(Integer.parseInt(request.getParameter("numeroadulti")));
-    servizio.setPreno(pr);
-
+    Prenotazione pr=(Prenotazione)session.getAttribute("pr");
 
 %>
 <html>
@@ -36,11 +25,11 @@
         <title>viaggi</title>
     </head>
     <body>
-    <center><h3> VIAGGI CORRISPONDENTI<h3/><center/>
+    <center><h3> VIAGGI CORRISPONDENTI</h3></center>
     <center>  
       <table>  <%
                     int num=1;
-                    for(String s:servizio.checktreno(servizio.getPreno())){
+                    for(String s:servizio.checktreno(pr)){
                     
                         if(s!=null){
                         out.print("<tr><td><th>");

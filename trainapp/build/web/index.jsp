@@ -31,7 +31,7 @@
     <center><h1>prenotazione</h1></center>
     <center>
         <div>
-            <form action="viewviaggi.jsp"  >
+            <form action=trans1.jsp  >
             <table>
                 <tr>
                 <th>partenza</th>

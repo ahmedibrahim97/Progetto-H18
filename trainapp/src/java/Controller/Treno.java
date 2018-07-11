@@ -42,6 +42,7 @@ public class Treno {
     public boolean aggiungivagone(Vagone v){
     
         v.denominazioneposti(numposti);
+        v.setNumvagone(vagoni.size()+1);
         vagoni.put(vagoni.size()+1, v);
         numposti=numposti+v.getNumeroposti();
         return false;

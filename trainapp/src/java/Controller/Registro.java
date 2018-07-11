@@ -9,13 +9,13 @@ import java.util.Iterator;
 public class Registro {
     
     
-    private HashMap<Posto,ArrayList<Occupazione>> riservazioni;
+    private HashMap<String,ArrayList<Occupazione>> riservazioni;
 
     public Registro() {
         riservazioni=new HashMap();
     }
 
-    public HashMap<Posto, ArrayList<Occupazione>> getRiservazioni() {
+    public HashMap<String, ArrayList<Occupazione>> getRiservazioni() {
         return riservazioni;
     }
     
@@ -27,7 +27,7 @@ public class Registro {
         
             for(j=0;j<t.getVagoni().get(i).getPosti().size();j++){
             
-                riservazioni.put(t.getVagoni().get(i).getPosti().get(j), new ArrayList());
+                riservazioni.put(t.getVagoni().get(i).getPosti().get(j).toString(), new ArrayList());
             
             }
         }
@@ -37,13 +37,12 @@ public class Registro {
     public boolean checkposto(String pt,String stazionep,String stazionea,Itinerario it,Modalita m){
     
     int i,j;
-        Iterator iter=riservazioni.keySet().iterator();
-        
+    
         for(i=0;i<riservazioni.size();i++){
         
-            if(iter.next().toString().equals(pt)){
+           
                 
-                  Posto p= (Posto)iter.next();
+                String p= pt;
         
                 if(riservazioni.get(p).isEmpty()){
                 
@@ -88,7 +87,7 @@ public class Registro {
                 return true;
             }
         
-        }
+        
         
     }
     
@@ -97,15 +96,8 @@ public class Registro {
     
     public void aggiungiriservazione(String p,String stp,String sta){
     
-        int i;
-        Iterator iter=riservazioni.keySet().iterator();
-        for(i=0;i<riservazioni.size();i++){
-        
-            if(iter.next().toString().equals(p)){
-                
-                  riservazioni.get(iter.next()).add(new Occupazione(stp,sta));
-                          
-            }
-        }
+        riservazioni.get(p).add(new Occupazione(stp,sta));
+     
     }
+    
 }

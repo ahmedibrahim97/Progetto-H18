@@ -11,14 +11,16 @@
     String posto=(String)session.getAttribute("posto");
     servizio.getPosti().add(posto);
     if(servizio.getV2()==null){
+        
         int i=servizio.returncompagnia(servizio.getV1().getCodviaggio().split("-")[0]);
         int j=servizio.getCompagnie().get(i).returnviaggio(servizio.getV1().getCodviaggio());
-        //servizio.getCompagnie().get(i).getViaggi().get(j).getRegistro().aggiungiriservazione(posto,pr.getStazionepartenza(),pr.getStazionearrivo());
-        //out.print(i+"-"+j+"-"+posto);
+        servizio.getCompagnie().get(i).getViaggi().get(j).getRegistro().aggiungiriservazione(posto,pr.getStazionepartenza(),pr.getStazionearrivo());
+        
+       
     }
     
     
-    pr.setNumadulti(pr.getNumadulti()-1);
+     pr.setNumadulti(pr.getNumadulti()-1);
 
     
     if(pr.getNumadulti()==0){
@@ -39,7 +41,6 @@
        }
     
     }
-
 
 
 

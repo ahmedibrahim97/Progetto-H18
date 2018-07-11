@@ -34,7 +34,7 @@ public class Registro {
     
     }
     
-    public boolean registrazione(String pt,String stazionep,String stazionea,Itinerario it,Modalita m){
+    public boolean checkposto(String pt,String stazionep,String stazionea,Itinerario it,Modalita m){
     
     int i,j;
         Iterator iter=riservazioni.keySet().iterator();
@@ -48,7 +48,6 @@ public class Registro {
                 if(riservazioni.get(p).isEmpty()){
                 
                     riservazioni.get(p).add(new Occupazione(stazionep,stazionea));
-                    //System.out.println("posto trovato");
                     return true;
                 }
                 else{
@@ -58,13 +57,11 @@ public class Registro {
                         if(m==Modalita.DIRETTO){
                             if(it.controllostazione(stazionea)>it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
                                 if(it.controllostazione(stazionep)<=it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
-                                    //System.out.println("Posto già occupato");
                                     return false;
                                 } 
                             }
                             else if(it.controllostazione(stazionep)<it.controllostazione(riservazioni.get(p).get(i).getStazionearrivo())){
                                 if(it.controllostazione(stazionep)>=it.controllostazione(riservazioni.get(p).get(i).getStazionearrivo())){
-                                    //System.out.println("Posto già occupato");
                                     return false;
                                 }
                             }   
@@ -74,13 +71,11 @@ public class Registro {
                         
                             if(it.controllostazione(stazionea)<it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
                                 if(it.controllostazione(stazionep)>=it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
-                                   // System.out.println("Posto già occupato");
                                     return false;
                                 }   
                             } 
                             else if(it.controllostazione(stazionep)>it.controllostazione(riservazioni.get(p).get(i).getStazionearrivo())){
                                 if(it.controllostazione(stazionea)<=it.controllostazione(riservazioni.get(p).get(i).getStazionearrivo())){
-                                    //System.out.println("Posto già occupato");
                                     return false;
                                 } 
                             }
@@ -89,7 +84,7 @@ public class Registro {
                     
                 }
                 
-                riservazioni.get(p).add(new Occupazione(stazionep,stazionea));
+               
                 return true;
             }
         
@@ -99,5 +94,18 @@ public class Registro {
     
    return false;
     }
-
+    
+    public void aggiungiriservazione(String p,String stp,String sta){
+    
+        int i;
+        Iterator iter=riservazioni.keySet().iterator();
+        for(i=0;i<riservazioni.size();i++){
+        
+            if(iter.next().toString().equals(p)){
+                
+                  riservazioni.get(iter.next()).add(new Occupazione(stp,sta));
+                          
+            }
+        }
+    }
 }

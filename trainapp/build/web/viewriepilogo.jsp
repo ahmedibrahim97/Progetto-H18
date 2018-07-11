@@ -23,7 +23,6 @@
         <table><%
             
                     if(servizio.getV2()!=null){
-                        //servizio.getPosti().add(pos.split("/")[2]+"/"+pos.split("/")[0]);
                         posto=pos.split("/")[2]+"/"+pos.split("/")[0];
                         session.setAttribute("posto",posto);
                         out.print("<tr><p>");
@@ -45,7 +44,6 @@
                         out.print("</p></tr>");
                     }
                     else{
-                        servizio.getPosti().add(pos.split("/")[1]);
                         posto=pos.split("/")[1];
                         session.setAttribute("posto",posto);
                         out.print("<tr><p>");

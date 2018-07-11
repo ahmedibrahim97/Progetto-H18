@@ -1,14 +1,10 @@
-<%-- 
-    Document   : viewposti
-    Created on : 3 juil. 2018, 15:20:08
-    Author     : QUENTIN
---%>
 <%@page import="Controller.*"%>
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     String[] pos=session.getAttribute("msg").toString().split("/");
+    
     int num=Integer.parseInt(pos[0]);
    
     
@@ -20,9 +16,14 @@
         <title>Posto</title>
     </head>
     <body>
-        
+        <%
+                out.print("<center><h1>");
+                out.print(pos[1].split("_")[0]);
+                out.print("</h1></center>");
+        %>
         <table style="border:1; align:center; margin-bottom:2px;">
-            <%
+            <%  
+                
                 int i,j,k;
                 Viaggio v=servizio.getV1();
                 if(Tipologia.values()[num-1]==Tipologia.PRIMA_STANDARD || Tipologia.values()[num-1]==Tipologia.SECONDA_STANDARD){

@@ -365,5 +365,14 @@ public class Compagnia {
         return prezzi;
     }
     
-    
+    public int returnviaggio(String cod){
+        int i;
+        for(i=0;i<viaggi.size();i++){
+            if(cod.equals(viaggi.get(i).getCodviaggio())){
+                return i;
+            }
+        
+        }
+        return -1;
+    }
 }

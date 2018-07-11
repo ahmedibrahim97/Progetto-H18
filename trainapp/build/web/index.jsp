@@ -48,7 +48,7 @@
                 <tr>
                 <form action="">
                 <fieldset>
-                Andata <input type="radio" name="modalita" value="ANDATA"/>
+                Andata <input checked="" type="radio" name="modalita" value="ANDATA"/>
                 Andtata/Ritorno <input type="radio" name="modalita" value="ANDATA_RITORNO"/>
                 </fieldset>
                 </form>

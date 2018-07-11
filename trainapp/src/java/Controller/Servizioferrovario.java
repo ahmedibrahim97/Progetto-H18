@@ -256,22 +256,19 @@ public class Servizioferrovario {
     }
             
 
-    
-    public boolean prenotaposti(String p,Prenotazione pr){
-    
-        int i,j;
-        Compagnia c=null;
-       
-        
-        if(v1!=null){
+    public int returncompagnia(String cod){
+        int i;
+        for(i=0;i<compagnie.size();i++){
+            if(cod.equals(compagnie.get(i).getNome())){
             
-           return v1.getRegistro().registrazione(p,pr.getStazionepartenza(),pr.getStazionearrivo(),v1.getPercorso(),v1.getModalita());
-         
+                return i;
+            }
+        
         }
-    
-    
-        return false;
-    
+        return -1;
     }
+    
+    
+    
       
 }

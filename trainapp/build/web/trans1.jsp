@@ -12,6 +12,7 @@
         Date dp=new Date(Integer.parseInt(datap[2])-1900,Integer.parseInt(datap[1]),Integer.parseInt(datap[0]));
         String mod=request.getParameter("modalita");
         int num=Integer.parseInt(request.getParameter("numeroadulti"));
+        session.setAttribute("num", num);
         
         if(mod.equals(OPZIONE.ANDATA_RITORNO.name())){
             

@@ -46,7 +46,6 @@ public class Registro {
         
                 if(riservazioni.get(p).isEmpty()){
                 
-                    riservazioni.get(p).add(new Occupazione(stazionep,stazionea));
                     return true;
                 }
                 else{
@@ -91,8 +90,8 @@ public class Registro {
         
     }
     
-   return false;
-    }
+   return true;
+}
     
     public void aggiungiriservazione(String p,String stp,String sta){
     

@@ -10,12 +10,20 @@
         int i=servizio.returncompagnia(servizio.getV1().getCodviaggio().split("-")[0]);
         int j=servizio.getCompagnie().get(i).returnviaggio(servizio.getV1().getCodviaggio());
         servizio.getCompagnie().get(i).getViaggi().get(j).getRegistro().aggiungiriservazione(posto,pr.getStazionepartenza(),pr.getStazionearrivo());
-        
+        //out.print(servizio.getV1().getRegistro().checkposto("3A", pr.getStazionepartenza(),pr.getStazionearrivo(),servizio.getV1().getPercorso(),servizio.getV1().getModalita()));
        
+    }
+    if(servizio.getV2()!=null){
+        int i=servizio.returncompagnia(servizio.getV1().getCodviaggio().split("-")[0]);
+        int j=servizio.getCompagnie().get(i).returnviaggio(servizio.getV1().getCodviaggio());
+        servizio.getCompagnie().get(i).getViaggi().get(j).getRegistro().aggiungiriservazione(posto.split("/")[0],pr.getStazionepartenza(),servizio.getStazioneincroccio());
+        int k=servizio.returncompagnia(servizio.getV2().getCodviaggio().split("-")[0]);
+        int l=servizio.getCompagnie().get(i).returnviaggio(servizio.getV2().getCodviaggio());
+        servizio.getCompagnie().get(k).getViaggi().get(l).getRegistro().aggiungiriservazione(posto.split("/")[1],servizio.getStazioneincroccio(),pr.getStazionearrivo());
     }
     
     
-     pr.setNumadulti(pr.getNumadulti()-1);
+    pr.setNumadulti(pr.getNumadulti()-1);
 
     
     if(pr.getNumadulti()==0){

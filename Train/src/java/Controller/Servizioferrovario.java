@@ -41,6 +41,11 @@ public class Servizioferrovario {
         return posti;
     }
 
+    public String getStazioneincroccio() {
+        return stazioneincroccio;
+    }
+
+    
                        
             
     public ArrayList<Compagnia> getCompagnie() {

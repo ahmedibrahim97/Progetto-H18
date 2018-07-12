@@ -1,9 +1,11 @@
+<%@page import="java.util.*"%>
 <%@page import="Controller.*"%>
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     String[] pos=session.getAttribute("msg").toString().split("/");
+    Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     
     int num=Integer.parseInt(pos[0]);
    
@@ -25,6 +27,7 @@
             <%  
                 
                 int i,j,k;
+                boolean b;
                 Viaggio v=servizio.getV1();
                 if(Tipologia.values()[num-1]==Tipologia.PRIMA_STANDARD || Tipologia.values()[num-1]==Tipologia.SECONDA_STANDARD){
                    
@@ -36,39 +39,57 @@
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
+                                String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                b=servizio.getV1().getRegistro().checkposto(s, pr.getStazionepartenza(),pr.getStazionearrivo(),servizio.getV1().getPercorso(),servizio.getV1().getModalita());
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                        out.print(s);
+                                    }
                                     out.print("</td>");
                                     
                                 }
                                 if(k==1){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                        out.print(s);
+                                    }
                                     out.print("</td>");
                                     out.print("<td>&nbsp&nbsp</td>");
                                 }
                                 if(k==2){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                        out.print(s);
+                                    }
                                     out.print("</td>");
                                 }    
                                
                                 if(k==3){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                        out.print(s);
+                                    }
                                     out.print("</td></tr>");
                                     k=-1;
                                 }
@@ -88,21 +109,31 @@
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
+                                 String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                 b=servizio.getV1().getRegistro().checkposto(s, pr.getStazionepartenza(),servizio.getStazioneincroccio(),servizio.getV1().getPercorso(),servizio.getV1().getModalita());
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    if(b==false){
+                                        out.print(s);
+                                    }
                                     out.print("</td>");
                                     out.print("<td>&nbsp&nbsp</td>");
                                }
                                 if(k==1){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b==true){
                                     out.print("<a href=\"viewposti2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                        out.print(s);
+                                    }
                                     out.print("</td>");
                                     k=-1;
                               }
@@ -122,3 +153,4 @@
         </table>
     </body>
 </html>
+

@@ -1,13 +1,15 @@
 
-<%@page import="Controller.Viaggio"%>
+<%@page import="Controller.*"%>
 <%@page import="Controller.Tipologia"%>
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+    Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     String pos=request.getParameter("param");
     int num=Integer.parseInt(pos.split("/")[0]);
     Viaggio v=servizio.getV2();
+    boolean b;
     
 
 %>
@@ -37,39 +39,57 @@
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
+                                String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                b=servizio.getV2().getRegistro().checkposto(s,servizio.getStazioneincroccio(),pr.getStazionearrivo(),servizio.getV2().getPercorso(),servizio.getV2().getModalita());
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td>");
                                     
                                 }
                                 if(k==1){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td>");
                                     out.print("<td>&nbsp&nbsp</td>");
                                 }
                                 if(k==2){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td>");
                                 }    
                                
                                 if(k==3){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td></tr>");
                                     k=-1;
                                 }
@@ -91,21 +111,31 @@
                             out.print("</h1></tr>");  
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
+                                String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                b=servizio.getV2().getRegistro().checkposto(s,servizio.getStazioneincroccio(),pr.getStazionearrivo(),servizio.getV2().getPercorso(),servizio.getV2().getModalita());
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td>");
                                     out.print("<td>&nbsp&nbsp</td>");
                                }
                                 if(k==1){
                                     out.print("<td>");
-                                    String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
+                                    if(b){
                                     out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
                                     out.print(s);
                                     out.print("<a/>");
+                                    }
+                                    else{
+                                    out.print(s);
+                                    }
                                     out.print("</td>");
                                     k=-1;
                               }

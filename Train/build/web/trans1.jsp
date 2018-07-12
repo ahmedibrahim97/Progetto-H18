@@ -4,7 +4,7 @@
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-
+    try{
         String stp=request.getParameter("partenza");
         String sta=request.getParameter("arrivo");
         String[] datap=request.getParameter("dataAndata").split("/");
@@ -31,6 +31,11 @@
         
         
         }
+    }
+    catch(Exception e){
+    
+        response.sendRedirect("index.jsp");
+    }
     
 
 

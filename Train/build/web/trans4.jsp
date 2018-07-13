@@ -4,8 +4,22 @@
     Author     : pc
 --%>
 
+<%@page import="Controller.*"%>
+<%@page import="java.util.Date"%>
+<%@page import="Controller.Prenotazione"%>
+<jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    response.sendRedirect("index.jsp");
+    Prenotazione pr=(Prenotazione)session.getAttribute("pr");
+    boolean b=(boolean)session.getAttribute("b");
+    
+    if(pr.getDataritorno()!=null && b==false){
+        b=true;
+        response.sendRedirect("viaggiRitorno.jsp");
+    }
+   
+    else{
+        response.sendRedirect("index.jsp");
+    }
 
 %>

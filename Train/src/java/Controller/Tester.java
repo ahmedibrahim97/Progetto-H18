@@ -78,7 +78,7 @@ public class Tester {
        Viaggio x=new Viaggio(t,linea2,new Date(118,8,2,17,30),Modalita.DIRETTO);
        
        Viaggio v1=new Viaggio(t,linea2,new Date(118,8,3,9,00),Modalita.INVERSO);
-       Viaggio w1=new Viaggio(t3,linea1,new Date(118,8,3,9,45),Modalita.DIRETTO);
+       Viaggio w1=new Viaggio(t3,linea1,new Date(118,8,3,10,45),Modalita.DIRETTO);
        Viaggio y1=new Viaggio(t3,linea1,new Date(118,8,3,18,00),Modalita.INVERSO);
        Viaggio x1=new Viaggio(t,linea2,new Date(118,8,3,16,30),Modalita.INVERSO);
         
@@ -86,8 +86,8 @@ public class Tester {
         
        Viaggio vo=new Viaggio(t1,linea2,new Date(118,8,2,18,00),Modalita.DIRETTO);
        Viaggio wo=new Viaggio(t2,linea1,new Date(118,8,2,15,00),Modalita.INVERSO);
-       Viaggio vo1=new Viaggio(t1,linea2,new Date(118,8,3,18,00),Modalita.INVERSO);
-       Viaggio wo1=new Viaggio(t2,linea1,new Date(118,8,3,15,00),Modalita.INVERSO);
+       Viaggio vo1=new Viaggio(t1,linea2,new Date(118,8,3,10,00),Modalita.INVERSO);
+       Viaggio wo1=new Viaggio(t2,linea1,new Date(118,8,3,15,00),Modalita.DIRETTO);
         
        it.aggiungiviaggio(v);
        it.aggiungiviaggio(w);

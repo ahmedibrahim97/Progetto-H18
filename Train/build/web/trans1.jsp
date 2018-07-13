@@ -1,10 +1,14 @@
 
 <%@page import="Controller.*"%>
-<%@page import="java.util.Date"%>
+<%@page import="java.util.*"%>
 <jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     try{
+        Tester t=new Tester();
+        t.inits();
+        servizio.setCompagnie(t.getCompagnie());
+        servizio.setItinerari(t.getI());
         String stp=request.getParameter("partenza");
         String sta=request.getParameter("arrivo");
         String[] datap=request.getParameter("dataAndata").split("/");
@@ -20,6 +24,15 @@
            Prenotazione pr=new Prenotazione(stp,sta,dp,dr);
            pr.setNumadulti(num);
            session.setAttribute("pr",pr);
+           if(dp.equals(dr) || dp.after(dr)){
+               out.print("<center><h1>");
+               out.print(" il giorno di partenza deve essere successivo al giorno di ritorno");
+               out.print("</h1></center>");
+           }
+           else{
+           
+               response.sendRedirect("trans5.jsp");
+           }
            
         }
         else{
@@ -36,8 +49,5 @@
     
         response.sendRedirect("index.jsp");
     }
-    
-
-
 
 %>

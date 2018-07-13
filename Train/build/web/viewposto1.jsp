@@ -40,7 +40,7 @@
                             
                             for(j=0;j<servizio.visualizzaposti(num,v).get(i).getPosti().size();j++){
                                 String s=servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString();
-                                b=servizio.getV1().getRegistro().checkposto(s, pr.getStazionepartenza(),pr.getStazionearrivo(),servizio.getV1().getPercorso(),servizio.getV1().getModalita());
+                                b=servizio.getV1().getRegistro().checkposto(s, pr.getStazionepartenza(),servizio.getStazioneincroccio(),servizio.getV1().getPercorso(),servizio.getV1().getModalita());
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b==true){

@@ -44,6 +44,8 @@ public class Tester {
         Treno t=new Treno();
         t.aggiungivagone(new Vagone(Tipologia.PRIMA_STANDARD,12));
         t.aggiungivagone(new Vagone(Tipologia.PRIMA_CUCCETTA,10));
+        t.aggiungivagone(new Vagone(Tipologia.SECONDA_STANDARD,15));
+        t.aggiungivagone(new Vagone(Tipologia.SECONDA_CUCETTA,12));
         Treno t3=new Treno();
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_STANDARD,9));
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_CUCCETTA,10));
@@ -74,18 +76,33 @@ public class Tester {
        Viaggio w=new Viaggio(t3,linea1,new Date(118,8,2,9,45),Modalita.INVERSO);
        Viaggio y=new Viaggio(t3,linea1,new Date(118,8,2,14,00),Modalita.DIRETTO);
        Viaggio x=new Viaggio(t,linea2,new Date(118,8,2,17,30),Modalita.DIRETTO);
+       
+       Viaggio v1=new Viaggio(t,linea2,new Date(118,8,3,9,00),Modalita.INVERSO);
+       Viaggio w1=new Viaggio(t3,linea1,new Date(118,8,3,9,45),Modalita.DIRETTO);
+       Viaggio y1=new Viaggio(t3,linea1,new Date(118,8,3,18,00),Modalita.INVERSO);
+       Viaggio x1=new Viaggio(t,linea2,new Date(118,8,3,16,30),Modalita.INVERSO);
+        
         
         
        Viaggio vo=new Viaggio(t1,linea2,new Date(118,8,2,18,00),Modalita.DIRETTO);
        Viaggio wo=new Viaggio(t2,linea1,new Date(118,8,2,15,00),Modalita.INVERSO);
+       Viaggio vo1=new Viaggio(t1,linea2,new Date(118,8,3,18,00),Modalita.INVERSO);
+       Viaggio wo1=new Viaggio(t2,linea1,new Date(118,8,3,15,00),Modalita.INVERSO);
         
        it.aggiungiviaggio(v);
        it.aggiungiviaggio(w);
        it.aggiungiviaggio(y);
        it.aggiungiviaggio(x);
+       it.aggiungiviaggio(v1);
+       it.aggiungiviaggio(w1);
+       it.aggiungiviaggio(y1);
+       it.aggiungiviaggio(x1);
        
        fr.aggiungiviaggio(vo);
        fr.aggiungiviaggio(wo);
+       fr.aggiungiviaggio(vo1);
+       fr.aggiungiviaggio(wo1);
+       
        
        it.setprezzo(Tipologia.PRIMA_STANDARD, 0.17);
        it.setprezzo(Tipologia.PRIMA_CUCCETTA, 0.20);

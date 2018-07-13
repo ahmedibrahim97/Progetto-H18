@@ -7,10 +7,7 @@
 <!DOCTYPE html>
 <%
 
-    Tester t=new Tester();
-    t.inits();
-    servizio.setCompagnie(t.getCompagnie());
-    servizio.setItinerari(t.getI());
+    
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
 
 %>

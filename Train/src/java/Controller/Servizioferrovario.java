@@ -108,7 +108,7 @@ public class Servizioferrovario {
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(1).getStazione1(),p.getStazionepartenza()));
                         viag[j]=(p.getStazionepartenza()+" >>>> "+p.getStazionearrivo()+"\t"+str.format(viaggicorr.get(j).getData())+" - ");
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(),p.getStazionearrivo()));
-                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"\t "+viaggicorr.get(j).getCodviaggio().split("-")[0]);
+                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"_"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()-i1.calcolodurata(i1.getTratte().get(1).getStazione1(),p.getStazionearrivo()));
                         
                     }
@@ -116,7 +116,7 @@ public class Servizioferrovario {
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(i1.getTratte().size()).getStazione2(),p.getStazionepartenza()));
                         viag[j]=(p.getStazionepartenza()+" >>>> "+p.getStazionearrivo()+"\t"+str.format(viaggicorr.get(j).getData())+" - ");
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(),p.getStazionearrivo()));
-                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"\t "+viaggicorr.get(j).getCodviaggio().split("-")[0]);
+                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"_"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()-i1.calcolodurata(i1.getTratte().get(i1.getTratte().size()).getStazione2(),p.getStazionearrivo()));
                     }
                 }

@@ -1,5 +1,7 @@
-
-<jsp:useBean id="servizio" class="Controller.Servizioferrovario" scope="session"/>
+<%--
+    Homepage che consente all'utente di inserire i dati necessari alla ricerca delle soluzioni di viaggio
+--%>
+<jsp:useBean id="servizio" class="Model.Servizioferroviario" scope="session"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,9 +21,14 @@
                 border-radius: 5px;
                 background-color: lightslategray;
             }
-            body{
-                
-                background: #ffffff  repeat 0 0;
+            
+            body {
+                -moz-background-size: cover;
+                background-attachment: fixed;
+                background-color: black;
+                background-image:url(Images/treno5.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;;
             }
             
         </style>

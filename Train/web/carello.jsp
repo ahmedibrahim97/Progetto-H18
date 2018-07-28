@@ -34,11 +34,17 @@
                 width: 70%;
                 border: 1px solid black;
                 border-radius: 5px;
-                background-color: lightslategray;
+                background-color: burlywood;
             }
             body{
                 
-                background: #ffffff  repeat 0 0;
+                -moz-background-size: cover;
+                background-attachment: fixed;
+                background-color: black;
+                background-image:url(Images/treno4.jpg);
+                background-repeat: no-repeat;
+                background-position: center center;;
+            
             }
             
         </style>

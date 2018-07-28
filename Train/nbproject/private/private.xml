@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/web/trans5.jsp</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Tratta.java</file>
             <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Tester.java</file>
-            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/web/trans1.jsp</file>
-            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Servizioferrovario.java</file>
-            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/web/index.jsp</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/carica.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Treno.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Vagone.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Itinerario.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/Progetto-H18/Train/src/java/Controller/Compagnia.java</file>
         </group>
     </open-files>
 </project-private>

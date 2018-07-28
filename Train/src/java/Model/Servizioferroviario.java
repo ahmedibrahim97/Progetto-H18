@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 
 import java.text.SimpleDateFormat;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class Servizioferrovario {
+public class Servizioferroviario {
     
     private ArrayList<Compagnia> compagnie;
     private ArrayList<Itinerario> itinerari;
@@ -23,7 +23,7 @@ public class Servizioferrovario {
 
   
 
-    public Servizioferrovario() {
+    public Servizioferroviario() {
         
         this.compagnie=new ArrayList();
         this.itinerari=new ArrayList();
@@ -104,7 +104,7 @@ public class Servizioferrovario {
                 }
                 String[] viag=new String[viaggicorr.size()];
                 for(j=0;j<viaggicorr.size();j++){
-                    if(itinerari.get(i).checkmodalita(p.getStazionepartenza(),p.getStazionearrivo())==Modalita.DIRETTO){
+                    if(itinerari.get(i).checkmodalita(p.getStazionepartenza(),p.getStazionearrivo())==Modalita.DIRETTA){
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(1).getStazione1(),p.getStazionepartenza()));
                         viag[j]=(p.getStazionepartenza()+" >>>> "+p.getStazionearrivo()+"\t"+str.format(viaggicorr.get(j).getData())+" - ");
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(),p.getStazionearrivo()));
@@ -145,19 +145,19 @@ public class Servizioferrovario {
                                 
                         
                         for(l=0;l<viaggi1.size();l++){
-                            if(i1.checkmodalita(p.getStazionepartenza(), stazioneincroccio)==Modalita.DIRETTO){
+                            if(i1.checkmodalita(p.getStazionepartenza(), stazioneincroccio)==Modalita.DIRETTA){
                                 viaggi1.get(l).getData().setMinutes(viaggi1.get(l).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(1).getStazione1(), stazioneincroccio));
                             }
-                            if(i1.checkmodalita(p.getStazionepartenza(), stazioneincroccio)==Modalita.INVERSO){
+                            if(i1.checkmodalita(p.getStazionepartenza(), stazioneincroccio)==Modalita.INVERSA){
                                 viaggi1.get(l).getData().setMinutes(viaggi1.get(l).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(i1.getTratte().size()).getStazione2(), stazioneincroccio));
                             }
                                     
                             for(m=0;m<viaggi2.size();m++){
                                 if(viaggi1.get(l).getTreno().getCodice().split("-")[0].equals(viaggi2.get(m).getTreno().getCodice().split("-")[0])){
-                                    if(i2.checkmodalita( stazioneincroccio,p.getStazionearrivo())==Modalita.DIRETTO){
+                                    if(i2.checkmodalita( stazioneincroccio,p.getStazionearrivo())==Modalita.DIRETTA){
                                         viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()+i2.calcolodurata(i2.getTratte().get(1).getStazione1(), stazioneincroccio));           
                                     }
-                                    if(i2.checkmodalita(stazioneincroccio,p.getStazionearrivo())==Modalita.INVERSO){
+                                    if(i2.checkmodalita(stazioneincroccio,p.getStazionearrivo())==Modalita.INVERSA){
                                         viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()+i2.calcolodurata(i2.getTratte().get(i2.getTratte().size()).getStazione2(), stazioneincroccio));
                                     }
                               

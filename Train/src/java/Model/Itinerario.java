@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 
 import java.util.HashMap;
@@ -7,18 +7,15 @@ import java.util.Map;
 
 public class Itinerario {
     
-    private String nome;
+ 
     private Map<Integer,Tratta> tratte;
 
-    public Itinerario(String nome, Map<Integer, Tratta> tratte) {
-        this.nome = nome;
+    public Itinerario(Map<Integer, Tratta> tratte) {
+
         this.tratte=new HashMap();
         this.tratte = tratte;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
     public Map<Integer, Tratta> getTratte() {
         return tratte;
@@ -169,17 +166,17 @@ public class Itinerario {
         }
         
         if(b1<b2){
-                return Modalita.DIRETTO;
+                return Modalita.DIRETTA;
         }       
         
         else if(b1>b2){
-            return Modalita.INVERSO;
+            return Modalita.INVERSA;
         }
         
         else if(b1==b2 && tratte.get(b1).getStazione1().equals(st1)){
-            return Modalita.DIRETTO;
+            return Modalita.DIRETTA;
         }
-        return Modalita.INVERSO;
+        return Modalita.INVERSA;
     }
     
 }

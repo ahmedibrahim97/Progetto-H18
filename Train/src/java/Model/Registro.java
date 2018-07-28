@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class Registro {
             
                     for(i=0;i<riservazioni.get(p).size();i++){
                     
-                        if(m==Modalita.DIRETTO){
+                        if(m==Modalita.DIRETTA){
                             if(it.controllostazione(stazionea)>it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
                                 if(it.controllostazione(stazionep)<=it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
                                     return false;
@@ -65,7 +65,7 @@ public class Registro {
                             }   
                         }   
                     
-                        else if(m==Modalita.INVERSO){
+                        else if(m==Modalita.INVERSA){
                         
                             if(it.controllostazione(stazionea)<it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){
                                 if(it.controllostazione(stazionep)>=it.controllostazione(riservazioni.get(p).get(i).getStazionepartenza())){

@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,5 +11,5 @@ package Controller;
  * @author QUENTIN
  */
 public enum Modalita {
-    DIRETTO,INVERSO;
+    DIRETTA,INVERSA;
 }

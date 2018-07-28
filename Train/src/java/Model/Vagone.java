@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class Vagone {
                 if(tipo==Tipologia.PRIMA_STANDARD){
                     posti.add(new Posto(i+"A"));
                 }
-                 if(tipo==Tipologia.SECONDA_CUCETTA){
+                 if(tipo==Tipologia.SECONDA_CUCCETTA){
                     posti.add(new Posto(i+"D"));
                 }
                  if(tipo==Tipologia.SECONDA_STANDARD){

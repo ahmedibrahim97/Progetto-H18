@@ -11,15 +11,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
-    boolean b=(boolean)session.getAttribute("b");
+   // boolean b=(boolean)session.getAttribute("b");
     
-    if(pr.getDataritorno()!=null && b==false){
-        b=true;
-        response.sendRedirect("viaggiRitorno.jsp");
+    if(pr.getDataritorno()!=null){
+        boolean b=(boolean)session.getAttribute("b");
+       if(b==false){
+           b=true;
+           response.sendRedirect("viaggiRitorno.jsp");
+       }
     }
    
     else{
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("temp.jsp");
     }
 
 %>

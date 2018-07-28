@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class Tester {
         compagnie.clear();
         I.clear();
         
-        HashMap<Integer,Tratta> strada=new HashMap();
+   /*     HashMap<Integer,Tratta> strada=new HashMap();
         strada.put(1,new Tratta("GENOVA","PAVIA",20,95.5));
         strada.put(2,new Tratta("PAVIA","MILANO",25,75.4));
         strada.put(3,new Tratta("MILANO","MODENA",30,40.3));
@@ -37,19 +37,21 @@ public class Tester {
         strada1.put(3,new Tratta("MILANO","PISA",25,43));
         strada1.put(4,new Tratta("PISA","VENEZIA",45,35));
         
-        Itinerario linea1=new Itinerario("A",strada);
-        Itinerario linea2=new Itinerario("B",strada1);
+        Itinerario linea1=new Itinerario("A");
+        Itinerario linea2=new Itinerario("B");
+        
+     
         
         
         Treno t=new Treno();
         t.aggiungivagone(new Vagone(Tipologia.PRIMA_STANDARD,12));
         t.aggiungivagone(new Vagone(Tipologia.PRIMA_CUCCETTA,10));
         t.aggiungivagone(new Vagone(Tipologia.SECONDA_STANDARD,15));
-        t.aggiungivagone(new Vagone(Tipologia.SECONDA_CUCETTA,12));
+        t.aggiungivagone(new Vagone(Tipologia.SECONDA_CUCCETTA,12));
         Treno t3=new Treno();
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_STANDARD,9));
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_CUCCETTA,10));
-        t3.aggiungivagone(new Vagone(Tipologia.SECONDA_CUCETTA,16));
+        t3.aggiungivagone(new Vagone(Tipologia.SECONDA_CUCCETTA,16));
         t3.aggiungivagone(new Vagone(Tipologia.SECONDA_STANDARD,20));
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_STANDARD,12));
         t3.aggiungivagone(new Vagone(Tipologia.PRIMA_CUCCETTA,16));
@@ -123,7 +125,7 @@ public class Tester {
        I.add(linea2);
        
       
-  
+  */
     
     }
 

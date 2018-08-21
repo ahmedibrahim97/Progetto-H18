@@ -16,7 +16,8 @@ public class Itinerario {
         this.tratte=new HashMap();
         this.tratte = tratte;
     }
-
+    
+    
 
     public Map<Integer, Tratta> getTratte() {
         return tratte;

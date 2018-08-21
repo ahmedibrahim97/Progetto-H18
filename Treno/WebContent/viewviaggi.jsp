@@ -21,18 +21,21 @@
       				
       				Prenotazione pr=(Prenotazione)request.getSession().getAttribute("pr");
                     int num=1;
-                    for(String s:servizio.checktreno(pr)){
                     
-                        if(s!=null){
-                        out.print("<tr><td><th>");
-                        out.print(s);
-                        out.print("</th></td>");
-                        out.print("<td>");
-                        out.print("<a href=\"viewclassi.jsp?param="+ num+"/"+s+"\"> scelgo <a/>");
-                        out.print("</td></tr>");
-                        num++;
-                        }
-                    } 
+                    	for(String s:servizio.checktreno(pr)){
+                    
+                        	if(s!=null){
+                        		out.print("<tr><td><th>");
+                        		out.print(s);
+                        		out.print("</th></td>");
+                        		out.print("<td>");
+                        		out.print("<a href=\"viewclassi.jsp?param="+ num+"/"+s+"\"> scelgo <a/>");
+                       		 	out.print("</td></tr>");
+                        		num++;
+                        	}
+                   		 }
+                    
+                 
                     
                     
                         

@@ -1,6 +1,9 @@
 package model;
 
-
+/**
+ * classe che permette di programmare in nuovo viaggio
+ * @author laurence
+ */
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,6 +17,13 @@ public class Viaggio implements Comparable {
     private Registro registro;
     private String codviaggio;
 
+    /**
+     * costruttore
+     * @param treno
+     * @param percorso itinerario
+     * @param data
+     * @param modalita verso di percorrenza dell'itinerario
+     */
     public Viaggio(Treno treno, Itinerario percorso, Date data,Modalita modalita) {
         
         this.treno = treno;

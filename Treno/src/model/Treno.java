@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * classe che permete di istanziare un treno che potrà essere aggiunto ai treni che possiede una determinata compagnia
+ * @author laurence
+ */
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +15,9 @@ public class Treno {
     private Map<Integer,Vagone> vagoni;
     private int numposti;
 
+    /**
+     * costruttore
+     */
     public Treno() {
         this.vagoni =new HashMap();
         this.numposti=0;

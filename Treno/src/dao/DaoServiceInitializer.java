@@ -1,5 +1,8 @@
 package dao;
-
+/**
+ * classe che permette di settare le componenti del sistema ferroviario
+ * @author laurence
+ */
 
 import java.sql.*;
 import java.text.*;
@@ -17,6 +20,10 @@ public class DaoServiceInitializer {
     private DaoFactory Dao;
     
     
+    /**
+     * costruttore
+     * @param Dao
+     */
     public DaoServiceInitializer(DaoFactory Dao){
         	this.Dao=Dao;
         	this.compagnie=new ArrayList();
@@ -24,6 +31,10 @@ public class DaoServiceInitializer {
     }
        
     
+    /**
+     * metodo che carica i dati dal database al sistema ferroviario
+     * @param s servizioferroviario di cui si vuole settare i componenti
+     */
     public void inits(Servizioferroviario s){		
     	Map<String,Itinerario> Iti= new HashMap();
     	

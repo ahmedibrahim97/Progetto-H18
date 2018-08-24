@@ -20,7 +20,12 @@
       <table>  <%
       				
       				Prenotazione pr=(Prenotazione)request.getSession().getAttribute("pr");
-                    int num=1;
+      				if(servizio.checktreno(pr).length==0){
+						out.print("<p><h3>Nessuna soluzione di viaggio trovata !!! </h3></p>");
+						out.print("<p><a href=\"index.jsp\">torna alla homepage<a/></p>");
+					}
+                    
+      				int num=1;
                     
                     	for(String s:servizio.checktreno(pr)){
                     
@@ -34,9 +39,6 @@
                         		num++;
                         	}
                    		 }
-                    
-                 
-                    
                     
                         
                 %>

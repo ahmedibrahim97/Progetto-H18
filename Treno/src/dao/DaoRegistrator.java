@@ -1,4 +1,8 @@
 package dao;
+/**
+ * classe che esegue un thread permettendo di registrare dei posti prenotati.
+ * @author laurence
+ */
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,6 +17,10 @@ public class DaoRegistrator extends Thread{
 	private String pt;
 	
 
+	/**
+	 * costruttore
+	 * @param Dao
+	 */
 	public DaoRegistrator(DaoFactory Dao){
 		super();
 		this.Dao=Dao;

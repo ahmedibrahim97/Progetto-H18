@@ -39,7 +39,8 @@ public class Controller5 extends HttpServlet {
 			        }
 			    }
 			    if(i==0||j==0){
-			        out.print("<center><h1>nessuna soluzione di viaggio trovata</h1><center>");
+			        out.print("<center><h1>nessuna soluzione di viaggio trovata!!!</h1><center>");
+			        out.print("<p><a href=\"index.jsp\">torna alla homepage<a/></p>");
 			    }
 			    else{
 			        response.sendRedirect("viewviaggiAndata.jsp");

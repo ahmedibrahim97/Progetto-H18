@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * classe che permette di istanziare uno vagone che potrà essere aggiunto alla lista dei vagoni da cui è composto un determinato treno
+ * 
+ */
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +17,11 @@ public class Vagone {
     private int numeroposti;
     private int numvagone;
 
+    /**
+     * costruttore
+     * @param tipo  classe del vagone
+     * @param numeroposti
+     */
     public Vagone(Tipologia tipo,int numeroposti) {
         this.posti = new ArrayList();
         this.tipo = tipo;

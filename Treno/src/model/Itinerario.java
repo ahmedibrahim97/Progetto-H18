@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * classe che permette di istanziare una linea ferroviaria
+ * 
+ * @author laurence
+ */
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +17,10 @@ public class Itinerario {
     private Map<Integer,Tratta> tratte;
     private String nome;
     
+    /**
+     * costruttore
+     * @param tratte
+     */
     public Itinerario(Map<Integer, Tratta> tratte) {
 
         this.tratte=new HashMap();
@@ -25,6 +35,11 @@ public class Itinerario {
     
     
 
+    /**
+     * metodo permettendo di verificare se una stazione è contenuta nell'itinerario
+     * @param stazione
+     * @return
+     */
     public int controllostazione(String stazione){
     
         int i;
@@ -41,6 +56,12 @@ public class Itinerario {
         return 0;
     }
     
+    /**
+     * metodo per il calcolo della durata del percorso tra 2 stazioni
+     * @param st1
+     * @param st2
+     * @return ritorna il valore della durata del percorso tra st1 e st2
+     */
     public int calcolodurata(String st1,String st2){
     
     int i,j,b1,b2,somma=0;
@@ -91,6 +112,12 @@ public class Itinerario {
         return 0;
     }
     
+    
+    /**metodo per il calcola della distanza tra 2 stazioni
+     * @param st1
+     * @param st2
+     * @return ritorna il valore della distanza tra st1 2 st2
+     */
     public double calcololunghezza(String st1,String st2){
         
     int i,j,b1,b2;
@@ -143,19 +170,13 @@ public class Itinerario {
         return 0;
     }
     
-    public int calcoloduratatot(){
+ 
     
-        int i,somma=0;
-        
-        for(i=1;i<=tratte.size();i++){
-        
-            somma+=tratte.get(i).getDurata();
-            
-        }
-    
-        return somma;
-    }
-    
+    /** metodo che determina il verso di percorrenza dell'itinerario
+     * @param st1
+     * @param st2
+     * @return ritorna il verso di percorrenza dell'itinerario quando si và da st1 a st2
+     */
     public Modalita checkmodalita(String st1,String st2){
         
         int i,b1,b2;

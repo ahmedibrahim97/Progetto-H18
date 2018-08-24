@@ -7,8 +7,8 @@ package model;
  */
 
 /**
- *
- * @author QUENTIN
+ * classe che permette di istanziare un nuovo posto
+ * @author laurence
  */
 public class Posto {
     
@@ -16,6 +16,10 @@ public class Posto {
     
    
             
+    /**
+     * costruttore
+     * @param nome
+     */
     public Posto(String nome) {
         this.nome = nome;
     }

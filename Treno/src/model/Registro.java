@@ -1,5 +1,10 @@
 package model;
 
+/**
+* classe che permmette di tenere traccia delle prenotazioni dei posti in un treno
+* @author laurence
+* 
+*/
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +16,9 @@ public class Registro {
     
     private HashMap<String,ArrayList<Occupazione>> riservazioni;
 
+    /**
+     * costruttore
+     */
     public Registro() {
         riservazioni=new HashMap();
     }
@@ -20,6 +28,10 @@ public class Registro {
     }
     
     
+    /**
+     * metodo che permette di tenere traccia delle prenotazioni fatte per ogni posti in un treno
+     * @param t
+     */
     public void tracciaposti(Treno t){
         int i,j;
         
@@ -34,6 +46,15 @@ public class Registro {
     
     }
     
+    /**
+     * metodo permette di controllare la disponibilità di un posto.
+     * @param pt
+     * @param stazionep
+     * @param stazionea
+     * @param it
+     * @param m
+     * @return ritorna true se il posto è disponibile e false nel caso contrario 
+     */
     public boolean checkposto(String pt,String stazionep,String stazionea,Itinerario it,Modalita m){
     
     int i,j;
@@ -93,6 +114,12 @@ public class Registro {
    return true;
 }
     
+    /**
+     * metodo per l'aggiunta di una riservazione per un posto
+     * @param p
+     * @param stp
+     * @param sta
+     */
     public void aggiungiriservazione(String p,String stp,String sta){
     
         riservazioni.get(p).add(new Occupazione(stp,sta));

@@ -29,8 +29,8 @@ public class Controller1 extends HttpServlet {
 		DateFormat str=new SimpleDateFormat("dd/MM/yyyy");
 		
 		response.setContentType("text/html;charset=UTF-8");
-		try(PrintWriter out = response.getWriter()){
-			
+		try{
+			PrintWriter out = response.getWriter();
 			DaoFactory dao=DaoFactory.getInstance();
 			
 			DaoServiceInitializer d=dao.getServiceInitializer();
@@ -43,8 +43,10 @@ public class Controller1 extends HttpServlet {
 		    String datap=request.getParameter("dataAndata");
 		    Date dp=str.parse(datap);
 		    String mod=request.getParameter("modalita");
-		    int num=Integer.parseInt(request.getParameter("numeroadulti"));
+		    int num=0;
+		    num=Integer.parseInt(request.getParameter("numeroadulti"));
 		    request.getSession().setAttribute("num",num);
+		 
 		    
 		    if(mod.equals(OPZIONE.ANDATA_RITORNO.name())){
 	            
@@ -54,9 +56,11 @@ public class Controller1 extends HttpServlet {
 		           pr.setNumadulti(num);
 		           request.getSession().setAttribute("pr",pr);
 		           if(dp.equals(dr) || dp.after(dr)){
-		               out.print("<center><h1>");
+		               out.print("<center><p><h1>");
 		               out.print(" il giorno di partenza deve essere successivo al giorno di ritorno");
-		               out.print("</h1></center>");
+		               out.print("</h1></p>");
+		               out.print("<p><a href=\"index.jsp\">torna alla homepage<a/></p>");
+		               out.print("</center>");
 		           }
 		           else{
 		           
@@ -71,6 +75,7 @@ public class Controller1 extends HttpServlet {
 		            pr.setNumadulti(num);
 		            request.getSession().setAttribute("pr",pr);
 		            response.sendRedirect("viewviaggi.jsp");
+		            
 		        
 		        
 		        }
@@ -79,6 +84,7 @@ public class Controller1 extends HttpServlet {
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			response.sendRedirect("index.jsp");
 		}
 	
 	}

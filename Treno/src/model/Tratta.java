@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * classe che permette di istanziare una nuova tratta  che potrà esser aggiunta ad un percorso
+ * @author laurence
+ *
+ */
 
 public class Tratta {
     
@@ -8,6 +13,13 @@ public class Tratta {
     private int durata;
     private double lunghezza;
 
+    /**
+     * costruttore
+     * @param Stazione1
+     * @param Stazione2
+     * @param durata
+     * @param lunghezza
+     */
     public Tratta(String Stazione1, String Stazione2, int durata,double lunghezza) {
         this.Stazione1 = Stazione1;
         this.Stazione2 = Stazione2;

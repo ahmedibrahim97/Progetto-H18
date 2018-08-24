@@ -7,8 +7,8 @@ package model;
  */
 
 /**
- *
- * @author QUENTIN
+ *classe enum che lista i diversi versi di percorrenza di un itinerario
+ * @author laurence
  */
 public enum Modalita {
     DIRETTA,INVERSA;

@@ -16,9 +16,7 @@ public class Registro {
     
     private HashMap<String,ArrayList<Occupazione>> riservazioni;
 
-    /**
-     * costruttore
-     */
+   
     public Registro() {
         riservazioni=new HashMap();
     }

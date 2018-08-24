@@ -21,8 +21,8 @@ public class Compagnia {
     private HashMap<Tipologia,Double> prezzi;
 
     /**
-     * costruttore
-     * @param nome
+     * 
+     * @param nome nome della compagnia
      */
     public Compagnia(String nome) {
         this.nome = nome;

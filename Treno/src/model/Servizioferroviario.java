@@ -200,7 +200,7 @@ public class Servizioferroviario {
                     			 viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()+i2.calcolodurata(i2.getTratte().get(i2.getTratte().size()).getStazione2(), stazioneincroccio));
                     		 }    
                     		
-                    		 System.out.println(viaggi2.get(0).getData()+" "+viaggi2.get(0).getCodviaggio());
+                    		
                     		 if(viaggi1.get(l).getData().before(viaggi2.get(m).getData())){
                     			 
                     			 viaggi1.get(l).getData().setMinutes(viaggi1.get(l).getData().getMinutes()-i1.calcolodurata(p.getStazionepartenza(), stazioneincroccio));
@@ -228,9 +228,7 @@ public class Servizioferroviario {
                         		 if(i2.checkmodalita(stazioneincroccio,p.getStazionearrivo())==Modalita.INVERSA){
                         			 viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()-i2.calcolodurata(i2.getTratte().get(i2.getTratte().size()).getStazione2(),p.getStazionearrivo()));
                         		 } 
-                        		 System.out.println(viaggi2.get(0).getData()+" "+viaggi2.get(0).getCodviaggio());
-                    			 System.out.println(viaggi1.get(0).getData()+" "+viaggi1.get(0).getCodviaggio());
-                    			 //System.out.println(viaggi2.get(0).getData()+" "+viaggi2.get(0).getCodviaggio());
+                        		
                     			 viaggip.add(viaggi1.get(l));
                     			 viaggia.add(viaggi2.get(m));
                     			 break;
@@ -294,7 +292,7 @@ public class Servizioferroviario {
             d+=i2.calcololunghezza(stazioneincroccio, a);
             v1=viaggip.get(num-1);
             v2=viaggia.get(num-1);
-            System.out.println(d);
+           
             
             for(i=0;i<compagnie.size();i++){
                 if(compagnie.get(i).getNome().equals(viaggia.get(num-1).getCodviaggio().split("-")[0])){

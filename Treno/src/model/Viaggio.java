@@ -18,10 +18,9 @@ public class Viaggio implements Comparable {
     private String codviaggio;
 
     /**
-     * costruttore
-     * @param treno
+     * @param treno treno che viene impiegato per il viaggio
      * @param percorso itinerario
-     * @param data
+     * @param data	giorno  e ora di partenza della prima stazione
      * @param modalita verso di percorrenza dell'itinerario
      */
     public Viaggio(Treno treno, Itinerario percorso, Date data,Modalita modalita) {

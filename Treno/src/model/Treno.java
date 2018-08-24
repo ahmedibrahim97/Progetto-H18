@@ -15,9 +15,7 @@ public class Treno {
     private Map<Integer,Vagone> vagoni;
     private int numposti;
 
-    /**
-     * costruttore
-     */
+ 
     public Treno() {
         this.vagoni =new HashMap();
         this.numposti=0;

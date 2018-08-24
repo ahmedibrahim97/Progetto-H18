@@ -18,11 +18,11 @@ public class Prenotazione {
     private int numadulti;
 
     /**
-     * costruttore
-     * @param stazionepartenza
-     * @param stazionearrivo
-     * @param datapartenza
-     * @param dataritorno
+     * costruttore che viene utilizzato nel caso di viaggio di andata e ritorno
+     * @param stazionepartenza stazione di partenza
+     * @param stazionearrivo   stazione di arrivo
+     * @param datapartenza	   giorno di partenza	
+     * @param dataritorno	   giorno di ritorno
      */
     public Prenotazione(String stazionepartenza, String stazionearrivo, Date datapartenza, Date dataritorno) {
         this.stazionepartenza = stazionepartenza;
@@ -34,10 +34,10 @@ public class Prenotazione {
     }
 
     /**
-     * costruttore
-     * @param stazionepartenza
-     * @param stazionearrivo
-     * @param datapartenza
+     * costruttore che viene utlizzato nel caso di un'andata semplice
+     * @param stazionepartenza stazione di partenza
+     * @param stazionearrivo   stazione di arrivo
+     * @param datapartenza	   giorno di partenza
      */
     public Prenotazione(String stazionepartenza, String stazionearrivo, Date datapartenza) {
         this.stazionepartenza = stazionepartenza;

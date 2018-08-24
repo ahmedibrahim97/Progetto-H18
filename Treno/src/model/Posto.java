@@ -7,7 +7,7 @@ package model;
  */
 
 /**
- * classe che permette di istanziare un nuovo posto
+ * classe che permette di istanziare un nuovo posto 
  * @author laurence
  */
 public class Posto {

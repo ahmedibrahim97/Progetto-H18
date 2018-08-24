@@ -18,8 +18,8 @@ public class Itinerario {
     private String nome;
     
     /**
-     * costruttore
-     * @param tratte
+     * 
+     * @param tratte mappa contenente le tratte da cui è composto l'itinerario.
      */
     public Itinerario(Map<Integer, Tratta> tratte) {
 

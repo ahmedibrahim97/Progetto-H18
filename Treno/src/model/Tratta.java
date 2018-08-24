@@ -14,11 +14,11 @@ public class Tratta {
     private double lunghezza;
 
     /**
-     * costruttore
-     * @param Stazione1
-     * @param Stazione2
-     * @param durata
-     * @param lunghezza
+     * 
+     * @param Stazione1 prima stazione della tratta
+     * @param Stazione2 seconda stazione della tratta
+     * @param durata    tempo necessario per andare dalla Stazione1 alla Stazione2
+     * @param lunghezza distanza tra la Stazione1 e la Stazione2
      */
     public Tratta(String Stazione1, String Stazione2, int durata,double lunghezza) {
         this.Stazione1 = Stazione1;

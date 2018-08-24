@@ -1,7 +1,8 @@
 package model;
 
 /**
- * classe che permette di istanziare uno vagone che potrà essere aggiunto alla lista dei vagoni da cui è composto un determinato treno
+ * 
+ *classe che permette di istanziare uno vagone che potrà essere aggiunto alla lista dei vagoni da cui è composto un determinato treno
  * 
  */
 
@@ -18,9 +19,9 @@ public class Vagone {
     private int numvagone;
 
     /**
-     * costruttore
+     * 
      * @param tipo  classe del vagone
-     * @param numeroposti
+     * @param numeroposti numero di posti contenuti nel vagone
      */
     public Vagone(Tipologia tipo,int numeroposti) {
         this.posti = new ArrayList();

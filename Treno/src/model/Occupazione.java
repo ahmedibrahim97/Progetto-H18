@@ -17,9 +17,9 @@ class Occupazione {
     private String stazionearrivo;
 
     /**
-     * costruttore
-     * @param stazionepartenza
-     * @param stazionearrivo
+     *
+     * @param stazionepartenza stazione a partire da cui verrà occupato il posto
+     * @param stazionearrivo   stazione fino a dove verrà occupato il posto
      */
     public Occupazione(String stazionepartenza, String stazionearrivo) {
         this.stazionepartenza = stazionepartenza;

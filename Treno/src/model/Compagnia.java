@@ -9,6 +9,7 @@ package model;
 
 
 import java.util.ArrayList;
+import java.text.*;
 import java.util.*;
 
 
@@ -64,21 +65,19 @@ public class Compagnia {
     public ArrayList<Viaggio> checkviaggi(Itinerario it,Modalita m,Date d){
     
         ArrayList<Viaggio> v=new ArrayList();
+        DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
+        
         int i;
         
         for(i=0;i<viaggi.size();i++){
-            if(viaggi.get(i).getData().getYear()==d.getYear() && viaggi.get(i).getData().getMonth()==d.getMonth()){
-                if(viaggi.get(i).getData().getDay()==d.getDay()){
-                	
+        	
+        	if(df.format(viaggi.get(i).getData()).equals(df.format(d))){
+               
                     if(viaggi.get(i).getPercorso().getNome().equals(it.getNome()) && viaggi.get(i).getModalita()==m){
                         
-                            v.add(viaggi.get(i));
-                        
-                       
+                            v.add(viaggi.get(i));          
                     }
-                
-                }
-            
+
             }
         }
         Collections.sort(v);

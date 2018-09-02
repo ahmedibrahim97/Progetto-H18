@@ -7,6 +7,10 @@
 <%
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     Prenotazione pr1=new Prenotazione(pr.getStazionepartenza(),pr.getStazionearrivo(),pr.getDatapartenza());
+    Prenotazione pr2=new Prenotazione(pr.getStazionearrivo(),pr.getStazionepartenza(),pr.getDataritorno());
+    boolean b=false;
+    session.setAttribute("b",b);
+  
    
 %>
 <html>
@@ -18,23 +22,37 @@
         <title>ViaggiAndata</title>
     </head>
     <body>
-        <center><h1>Soluzioni Viaggio Andata</h1></center>
+        <center><h1>Soluzioni Viaggio Andata:</h1></center>
         <center>
             <table>
         <%
-            int num=1;
-            for(String s:servizio.checktreno(pr1)){
-                
-                
-                    if(s!=null){
-                        out.print("<tr><td>");
-                        out.print(s);
-                        out.print("</td><td>");
-                        out.print("<a href=\"viewclassi.jsp?param="+ num+"/"+s+"\">scelgo <a/>");
-                        out.print("</td></tr>");
-                        num++;
-                    }
-            }
+        	boolean bool=true;
+        	try{
+        		
+        		if(servizio.checktreno(pr1).length==0 || servizio.checktreno(pr2).length==0){
+        			out.print("<center><p><h1>");
+		            out.print(" Nessuna soluzione di viaggio trovata");
+		            out.print("</h1></p>");
+		            out.print("<p><a href=\"index.jsp\">torna alla homepage<a/></p>");
+		            out.print("</center>");
+            		bool=false;
+            	}
+            	int num=1;
+            	if(bool){
+            		for(String s:servizio.checktreno(pr1)){
+      					if(s!=null){
+                        	out.print("<tr><td>");
+                        	out.print(s);
+                        	out.print("</td><td>");
+                        	out.print("<a href=\"viewclassi.jsp?param="+ num+"/"+s+"\">scelgo <a/>");
+                        	out.print("</td></tr>");
+                        	num++;
+                    	}	
+            		}
+            	}
+        	}catch(Exception ex){
+        		response.sendRedirect("Controller5");
+        	}
                 
               
            

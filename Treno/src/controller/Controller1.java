@@ -26,15 +26,15 @@ public class Controller1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		Servizioferroviario servizio =(Servizioferroviario)session.getAttribute("servizio");
-		DateFormat str=new SimpleDateFormat("dd/MM/yyyy");
+		DateFormat str=new SimpleDateFormat("yyyy-MM-dd");
 		
 		response.setContentType("text/html;charset=UTF-8");
 		try{
 			PrintWriter out = response.getWriter();
 			DaoFactory dao=DaoFactory.getInstance();
-			
-			DaoServiceInitializer d=dao.getServiceInitializer();
-			d.inits(servizio);
+			request.getSession().setAttribute("dao",dao);
+			DaoServiceInitializer di=dao.getServiceInitializer();
+			di.inits(servizio);
 			DaoRegistrator dbr=dao.getDaoRegistrator();
 			request.getSession().setAttribute("dbr",dbr);
 			request.getSession().setAttribute("servizio",servizio);
@@ -46,6 +46,7 @@ public class Controller1 extends HttpServlet {
 		    int num=0;
 		    num=Integer.parseInt(request.getParameter("numeroadulti"));
 		    request.getSession().setAttribute("num",num);
+		    request.getSession().setAttribute("mod",mod);
 		 
 		    
 		    if(mod.equals(OPZIONE.ANDATA_RITORNO.name())){
@@ -64,7 +65,7 @@ public class Controller1 extends HttpServlet {
 		           }
 		           else{
 		           
-		        	   response.sendRedirect("Controller5");
+		        	   response.sendRedirect("viewviaggiAndata.jsp");
 
 		           }
 		           
@@ -82,7 +83,7 @@ public class Controller1 extends HttpServlet {
 		   
 		  
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 			response.sendRedirect("index.jsp");
 		}

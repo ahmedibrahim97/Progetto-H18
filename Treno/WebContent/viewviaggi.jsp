@@ -19,11 +19,13 @@
     <center>  
       <table>  <%
       				
+      				try{
       				Prenotazione pr=(Prenotazione)request.getSession().getAttribute("pr");
       				if(servizio.checktreno(pr).length==0){
 						out.print("<p><h3>Nessuna soluzione di viaggio trovata !!! </h3></p>");
 						out.print("<p><a href=\"index.jsp\">torna alla homepage<a/></p>");
 					}
+      				
                     
       				int num=1;
                     
@@ -40,7 +42,10 @@
                         	}
                    		 }
                     
-                        
+      				}
+      				catch(Exception e){
+      					response.sendRedirect("Controller5");
+      				}
                 %>
       </table> 
       

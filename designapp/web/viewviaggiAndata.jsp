@@ -1,13 +1,20 @@
-
+<%-- 
+    Document   : view
+    Created on : 13-lug-2018, 16.40.32
+    Author     : pc
+--%>
 <%@page import="Model.*"%>
-<%@page import="java.util.Date"%>
+<%@page import="java.util.*"%>
 <jsp:useBean id="servizio" class="Model.Servizioferroviario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-
-    
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
+    Prenotazione pr1=new Prenotazione(pr.getStazionepartenza(),pr.getStazionearrivo(),pr.getDatapartenza());
+    
+
+
+
 
 %>
 <html>
@@ -92,7 +99,7 @@
     <a href="viewviaggi.jsp"></a>
  
        <div class="panel panel-default"> 
-           <div class="panel-heading">Viaggi Corrispondenti</div> 
+           <div class="panel-heading">Viaggi Corrispondenti Andata</div> 
            			 <table class="table"> 
                         <thead> 
                         <tr> 
@@ -109,7 +116,7 @@
                     int num=1;
    				
                     for(String s:servizio.checktreno(pr)){
-                    	
+                    
                         if(s!=null){
                         out.print("<tr><th scope = \"row\">"+num+"</th>");
                         String[] separazione=s.split("/");
@@ -141,3 +148,4 @@
       <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+

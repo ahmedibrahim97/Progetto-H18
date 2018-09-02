@@ -1,14 +1,17 @@
+<%-- 
+    Document   : ntrans6
+    Created on : 13-lug-2018, 22.31.13
+    Author     : pc
+--%>
 
 <%@page import="Model.*"%>
-<%@page import="java.util.Date"%>
-<jsp:useBean id="servizio" class="Model.Servizioferroviario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="servizio" class="Model.Servizioferroviario" scope="session" />
 <!DOCTYPE html>
 <%
-
-    
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
-
+    Prenotazione pr1=new Prenotazione(pr.getStazionearrivo(),pr.getStazionepartenza(),pr.getDataritorno());
+    session.setAttribute("pr",pr1);
 %>
 <html>
     <head>
@@ -92,7 +95,7 @@
     <a href="viewviaggi.jsp"></a>
  
        <div class="panel panel-default"> 
-           <div class="panel-heading">Viaggi Corrispondenti</div> 
+           <div class="panel-heading">Viaggi Ritorno</div> 
            			 <table class="table"> 
                         <thead> 
                         <tr> 
@@ -109,7 +112,7 @@
                     int num=1;
    				
                     for(String s:servizio.checktreno(pr)){
-                    	
+                    
                         if(s!=null){
                         out.print("<tr><th scope = \"row\">"+num+"</th>");
                         String[] separazione=s.split("/");
@@ -141,3 +144,4 @@
       <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+

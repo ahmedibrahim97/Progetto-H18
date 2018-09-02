@@ -6,6 +6,7 @@ package model;
  */
 
 import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,9 +31,9 @@ public class Servizioferroviario {
    
     public Servizioferroviario() {
         
-        this.compagnie=new ArrayList();
-        this.itinerari=new ArrayList();
-        this.posti=new ArrayList();
+        this.compagnie=new ArrayList<Compagnia>();
+        this.itinerari=new ArrayList<Itinerario>();
+        this.posti=new ArrayList<String>();
         this.stazioneincroccio=null;
         this.i1=null;
         this.i2=null;

@@ -106,17 +106,17 @@ public class Servizioferroviario {
                 for(j=0;j<viaggicorr.size();j++){
                     if(itinerari.get(i).checkmodalita(p.getStazionepartenza(),p.getStazionearrivo())==Modalita.DIRETTA){
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(1).getStazione1(),p.getStazionepartenza()));
-                        viag[j]=(p.getStazionepartenza()+" >>>> "+p.getStazionearrivo()+"\t"+str.format(viaggicorr.get(j).getData())+" - ");
+                        viag[j]=(p.getStazionepartenza()+"/"+p.getStazionearrivo()+"/"+str.format(viaggicorr.get(j).getData())+" - ");
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(),p.getStazionearrivo()));
-                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"_"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
+                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"/"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()-i1.calcolodurata(i1.getTratte().get(1).getStazione1(),p.getStazionearrivo()));
                         
                     }
                     else{
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(i1.getTratte().get(i1.getTratte().size()).getStazione2(),p.getStazionepartenza()));
-                        viag[j]=(p.getStazionepartenza()+" >>>> "+p.getStazionearrivo()+"\t"+str.format(viaggicorr.get(j).getData())+" - ");
+                        viag[j]=(p.getStazionepartenza()+" / "+p.getStazionearrivo()+"/"+str.format(viaggicorr.get(j).getData())+" - ");
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(),p.getStazionearrivo()));
-                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"_"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
+                        viag[j]=viag[j].concat(str.format(viaggicorr.get(j).getData())+"/"+viaggicorr.get(j).getCodviaggio().split("-")[0]);
                         viaggicorr.get(j).getData().setMinutes(viaggicorr.get(j).getData().getMinutes()-i1.calcolodurata(i1.getTratte().get(i1.getTratte().size()).getStazione2(),p.getStazionearrivo()));
                     }
                 }
@@ -164,12 +164,12 @@ public class Servizioferroviario {
                                     if(viaggi1.get(l).getData().compareTo(viaggi2.get(m).getData())<=0){
                                                 
                                         viaggi1.get(l).getData().setMinutes(viaggi1.get(l).getData().getMinutes()-i1.calcolodurata(p.getStazionepartenza(), stazioneincroccio));
-                                        viag[l]=(p.getStazionepartenza()+" >>> "+stazioneincroccio+" "+str.format(viaggi1.get(l).getData())+"-");
+                                        viag[l]=(p.getStazionepartenza()+"/"+stazioneincroccio+" "+str.format(viaggi1.get(l).getData())+"-");
                                         viaggi1.get(l).getData().setMinutes(viaggi1.get(l).getData().getMinutes()+i1.calcolodurata(p.getStazionepartenza(), stazioneincroccio));
-                                        viag[l]=viag[l].concat(str.format(viaggi1.get(l).getData())+"\t");
-                                        viag[l]=viag[l].concat("_"+stazioneincroccio+" >>> "+p.getStazionearrivo()+" "+str.format(viaggi2.get(m).getData())+"-");
+                                        viag[l]=viag[l].concat(str.format(viaggi1.get(l).getData())+"/");
+                                        viag[l]=viag[l].concat("_"+stazioneincroccio+"/"+p.getStazionearrivo()+"/"+str.format(viaggi2.get(m).getData())+"-");
                                         viaggi2.get(m).getData().setMinutes(viaggi2.get(m).getData().getMinutes()+i2.calcolodurata(stazioneincroccio,p.getStazionearrivo()));
-                                        viag[l]=viag[l].concat(str.format(viaggi2.get(m).getData())+"_"+viaggi2.get(m).getCodviaggio().split("-")[0]);
+                                        viag[l]=viag[l].concat(str.format(viaggi2.get(m).getData())+"/"+viaggi2.get(m).getCodviaggio().split("-")[0]);
                                         viaggip.add(viaggi1.get(l));
                                         viaggia.add(viaggi2.get(m));
                                         break;

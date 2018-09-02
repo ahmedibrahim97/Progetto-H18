@@ -41,11 +41,14 @@ public class DaoFactory {
 	/**
 	 * @return ritorna una connessione al database
 	 * @throws SQLException
+	 * @throws ClassNotFoundException 
 	 */
 	public Connection getConnection() throws SQLException{
 		
-		DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
+		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver ());
+
 		return DriverManager.getConnection(url,username,password);
+	
 		
 	}
 	

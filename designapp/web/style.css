@@ -31,8 +31,14 @@ body{
 }
 
 
-#carousel-classi > .carousel-inner {
-	max-height:200px;
+.immagine {
+	min-height:200px;
 	
+	background-image:url(Images/treno7.jpg);
+	background-attachment: fixed;
+                background-color: black;
+               
+                background-repeat: no-repeat;
+                background-position: center center;;
 }
 

@@ -49,21 +49,9 @@
 </nav>
 
 
-<!-- carosello -->
-<div id="carousel-classi" class="carousel slide" data-ride="carousel">
-  
+<div class="immagine">
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active" style="background-image: url(Images/treno7.jpg);">
 
-            <div class="carousel-caption">
-                <h1>Trova Il Posto Giusto per te</h1>
-            </div>
-        </div>
-  
-      
-    </div>
 
 </div>
 

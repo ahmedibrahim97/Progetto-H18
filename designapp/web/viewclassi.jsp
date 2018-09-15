@@ -1,5 +1,5 @@
-<%@page import="Model.*"%>
-<jsp:useBean id="servizio" class="Model.Servizioferroviario" scope="session" />
+<%@page import="model.*"%>
+<jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -88,7 +88,7 @@
  				</button>
   					<ul class="dropdown-menu">
     					<li><%
-    					 out.print("<a href=\"trans2.jsp?param="+ num +"/"+pos[1]+"/"+s+"\">");
+    					 out.print("<a href=\"Controller2?param="+ num +"/"+pos[1]+"/"+s+"\">");
     		 				 out.print(separazione[1]);
     
    										 %>

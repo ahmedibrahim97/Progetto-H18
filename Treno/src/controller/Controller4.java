@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,60 +23,79 @@ public class Controller4 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		Servizioferroviario servizio=(Servizioferroviario)request.getSession().getAttribute("servizio");
+		DateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
 		
 		try(PrintWriter out = response.getWriter()){
 			 Prenotazione pr=(Prenotazione)request.getSession().getAttribute("pr");
 			 DaoRegistrator dr=(DaoRegistrator)request.getSession().getAttribute("dbr");
+			 String preno=request.getSession().getAttribute("preno").toString();
+			 String msg=request.getSession().getAttribute("msg").toString();
+			 boolean b=(boolean)request.getSession().getAttribute("b");
+			 String mod="ANDATA";
 			 
-			 
-			 if(servizio.getV2()==null){
-				 dr.setCodViaggio(servizio.getV1().getCodviaggio());
-				 dr.setStp(pr.getStazionepartenza());
-				 dr.setSta(pr.getStazionearrivo());
+			 if(b==false){
+				 dr.uploadprenotazioni(preno,msg+"/"+sdf.format(pr.getDatapartenza()),mod);
 				 for(String s: servizio.getPosti()){				 	 
 					 
-					 dr.setPt(s);
-					 dr.run();
+					 dr.uploadprenotazioni_posto(preno,s,mod);
+				
+				 }
+			
+			 }
+			 if(b==true){
+				 mod="RITORNO";
+				 dr.uploadprenotazioni(preno,msg+"/"+sdf.format(pr.getDatapartenza()),mod);
+				 for(String s: servizio.getPosti()){				 	 
 					 
+					 dr.uploadprenotazioni_posto(preno,s,mod);
+				
+				 }
+				 
+			 }
+			 
+			 if(servizio.getV2()==null){
+				
+				 
+				 for(String s: servizio.getPosti()){				 	 
+					 
+					 dr.uploadregistro(servizio.getV1().getCodviaggio(),pr.getStazionepartenza(),pr.getStazionearrivo(),s, preno);
+				
 				 }
 			 }
 			 else if(servizio.getV2()!=null){
-				 dr.setCodViaggio(servizio.getV1().getCodviaggio());
-				 dr.setStp(pr.getStazionepartenza());
-				 dr.setSta(servizio.getStazioneincroccio());
+				 
 				 for(String s: servizio.getPosti()){				 	 
 					 
-					 dr.setPt(s.split("/")[0]);
-					 dr.run();
+		
+					 dr.uploadregistro(servizio.getV1().getCodviaggio(),pr.getStazionepartenza(),pr.getStazionearrivo(),s.split("/")[0], preno);
 					 
 				 }
-				 dr.setCodViaggio(servizio.getV2().getCodviaggio());
-				 dr.setStp(servizio.getStazioneincroccio());
-				 dr.setSta(pr.getStazionearrivo());
+				
 				 for(String s: servizio.getPosti()){				 	 
 					 
-					 dr.setPt(s.split("/")[1]);
-					 dr.run();
+					 dr.uploadregistro(servizio.getV1().getCodviaggio(),pr.getStazionepartenza(),pr.getStazionearrivo(),s.split("/")[1], preno);
+					 
 					 
 				 }
 				 
 			 }
 			 
-			 
+	
 			    
-			    if(pr.getDataritorno()!=null){
-			        boolean b=(boolean)request.getSession().getAttribute("b");
-			       if(b==false){
+			 if(pr.getDataritorno()!=null){
+				  
+				 if(b==false){
 			           b=true;
+			           
 			           request.getSession().setAttribute("b",b);
 			           response.sendRedirect("viaggiRitorno.jsp");
-			       }
-			    }
+			     }
+			 }
 			   
-			    else{
+			 else{
 			        response.sendRedirect("fine.jsp");
 			    	
-			    }
+			 }
 		}
 		
 	}

@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,6 +48,13 @@ public class Controller1 extends HttpServlet {
 		    num=Integer.parseInt(request.getParameter("numeroadulti"));
 		    request.getSession().setAttribute("num",num);
 		    request.getSession().setAttribute("mod",mod);
+		    Random random=new Random();
+		    int k=100000;
+		    int r=random.nextInt(k);
+		    String preno=stp.substring(0,2)+sta.substring(0,2)+r;
+		    request.getSession().setAttribute("preno",preno);
+		    boolean b=false;
+		    request.getSession().setAttribute("b",b);
 		 
 		    
 		    if(mod.equals(OPZIONE.ANDATA_RITORNO.name())){

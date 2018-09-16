@@ -1,12 +1,11 @@
-<jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <html>
 <head>
-  <title>Home</title>
+  <title>trackin code</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="arrivederci.css">
+    <link rel="stylesheet" href="style3.css">
 
    
 </head>
@@ -40,25 +39,21 @@
 </nav>
 
 <center>
-<div class="alert alert-success" role="alert">
-<p><h3>PRENOTAZIONE AVVENUTA CON SUCCESSO!</h3></p>
-
-
-</div>
+<div class="alert alert-danger" role="alert"><h3>Errore: inserire un tracking code valido</h3></div>
 </center>
-<p style:"backgroung-font:#fff"><h4>il tuo track code è:
+<div class="jumbotron">
+     <form class="formtracking" action="Controller6" method="get">
 
-<%
+     <p >Inserisci il tuo tracking code:</p>
+            <input type="text" class="form-control" name="code" placeholder="code">       
+		<div class="botton">
+      		<button type="button" class="btn btn-primary btn-lg">Cerca</button>
+		</div>
 
-out.print(session.getAttribute("preno").toString());
+    </form>
+</div>
 
-%>
-</h4>
- </p>
- 
- <button type="button" class="btn btn-default" aria-label="Left Align">
- <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-</button>
+
 
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

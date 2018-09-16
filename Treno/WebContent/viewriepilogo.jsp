@@ -36,36 +36,41 @@
                         posto=pos.split("/")[2]+"/"+pos.split("/")[0];
                         session.setAttribute("posto",posto);
                         out.print("<tr><p>");
-                        out.print(pos.split("/")[3].split("_")[0]);
+                        out.print(pos.split("/")[11]);
+                        out.print("</p></tr>");
+                        out.print("<tr><p>");
+                        out.print(pos.split("/")[12].split(":")[0]);
+                        out.print("</p></tr>");
+                        out.print("<tr><p>");
+                        out.print(pos.split("/")[5]+">>>>"+pos.split("/")[6]+" "+pos.split("/")[7]);
                         out.print("</p></tr>");
                         out.print("<tr><p>");
                         out.print("POSTO: ");
                         out.print(pos.split("/")[2]);
                         out.print("</p></tr>");
                         out.print("<tr><p>");
-                        out.print(pos.split("/")[3].split("_")[1]);
+                        out.print(pos.split("/")[8]+">>>>"+pos.split("/")[9]+" "+pos.split("/")[10]);
                         out.print("</p></tr>");
                         out.print("<tr><p>");
                         out.print("POSTO: ");
                         out.print(pos.split("/")[0]);
                         out.print("</p></tr>");
-                        out.print("<tr><p>");
-                        out.print(pos.split("/")[4]);
-                        out.print("</p></tr>");
+                        
                     }
                     else{
                         posto=pos.split("/")[1];
                         session.setAttribute("posto",posto);
                         out.print("<tr><p>");
-                        out.print(pos.split("/")[2]);
+                        out.print(pos.split("/")[7]);
+                        out.print("</p></tr>");
+                        out.print("<tr><p>");
+                        out.print(pos.split("/")[8].split(":")[0]);
                         out.print("</p></tr>");
                         out.print("<tr><p>");
                         out.print("POSTO: ");
                         out.print(pos.split("/")[1]);
                         out.print("</p></tr>");
-                        out.print("<tr><p>");
-                        out.print(pos.split("/")[3]);
-                        out.print("</p></tr>");
+                        
                  
                     
                     }

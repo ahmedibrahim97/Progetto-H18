@@ -5,8 +5,10 @@
 <!DOCTYPE html>
 <%
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
-    String pos=request.getParameter("param");
-    int num=Integer.parseInt(pos.split("/")[0]);
+    String msg=request.getParameter("param");
+    String[] pos=msg.split("/");
+    System.out.println(pos);
+    int num=Integer.parseInt(pos[0]);
     Viaggio v=servizio.getV2();
     boolean b;
     
@@ -35,11 +37,12 @@
     </head>
     <body>
         <%
-                out.print("<center><h1>");
-                out.print(pos.split("/")[2].split("_")[1]);
-                out.print("</h1></center>");
-        %>
-       <%       
+                out.print("<center><h3><p>");
+                out.print(pos[7]+">>>>"+pos[8]+" "+pos[9]);
+                out.print("</p><p>"+pos[10]+"</p><p>");
+                out.print(pos[11].split(":")[0]);
+                out.print("</p></h3></center>");
+             
                 out.print("<div>");
                 out.print("<table style=\"border:1; align:center; margin-bottom:2px;\">");
                 int i,j,k;
@@ -58,7 +61,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -71,7 +74,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -84,7 +87,7 @@
                                 if(k==2){
                                     out.print("<td>");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -97,7 +100,7 @@
                                 if(k==3){
                                     out.print("<td>");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -130,7 +133,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -143,7 +146,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+pos+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }

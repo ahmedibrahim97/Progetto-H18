@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <%
     String msg=(String)session.getAttribute("msg");
-    //out.print(msg);
     double num=0;
     
 %>
@@ -50,16 +49,29 @@
         </style>
         
         <%
-            out.print(msg.split("/")[1]);
-            out.print("<p>");
-            out.print(msg.split("/")[2].split(":")[0]);
-            out.print("</p>");
+        	
+        	if(servizio.getStazioneincroccio()==null){
+        		out.print("<p>"+msg.split("/")[5]+"</p>");
+            	out.print(msg.split("/")[2]+">>>>"+msg.split("/")[3]+" "+msg.split("/")[4]);
+            	out.print("<p>");
+            	out.print(msg.split("/")[6].split(":")[0]);
+            	out.print("</p>");
+            	num=Double.parseDouble(msg.split("/")[6].split(":")[1].split("euros")[0]);
+            }
+        	else if(servizio.getStazioneincroccio()!=null){
+        		out.print("<p>"+msg.split("/")[8]+"</p>");
+        		out.print(msg.split("/")[2]+">>>>"+msg.split("/")[6]+" "+msg.split("/")[4].split("-")[0]+"-"+msg.split("/")[7].split("-")[1]);
+            	out.print("<p>");
+            	out.print(msg.split("/")[9].split(":")[0]);
+            	out.print("</p>");
+            	num=Double.parseDouble(msg.split("/")[9].split(":")[1].split("euros")[0]);
+        	}
        %>
      
         <table>
    
             <%
-                num=Double.parseDouble(msg.split("/")[2].split(":")[1].split("euros")[0]);
+                
                 out.print("<tr><td>");
                 out.print("POSTI");
                 out.print("</td><td>");

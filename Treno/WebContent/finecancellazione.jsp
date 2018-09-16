@@ -1,7 +1,6 @@
-<jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <html>
 <head>
-  <title>Home</title>
+  <title>fine cancellazione</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,20 +40,12 @@
 
 <center>
 <div class="alert alert-success" role="alert">
-<p><h3>PRENOTAZIONE AVVENUTA CON SUCCESSO!</h3></p>
+<p><h3>LA PRENOTAZIONE <%out.print(request.getSession().getAttribute("Cod").toString());%> E STATA CANCELLATA CON SUCCESSO!</h3></p>
 
 
 </div>
 </center>
-<p style:"backgroung-font:#fff"><h4>il tuo track code è:
 
-<%
-
-out.print(session.getAttribute("preno").toString());
-
-%>
-</h4>
- </p>
  
  <button type="button" class="btn btn-default" aria-label="Left Align">
  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>

@@ -7,7 +7,6 @@
 	String msg=(String)session.getAttribute("msg");
     String[] pos=msg.toString().split("/");
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
-    System.out.println(msg);
     
     int num=Integer.parseInt(pos[0]);
    

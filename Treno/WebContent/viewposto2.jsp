@@ -7,7 +7,6 @@
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     String msg=request.getParameter("param");
     String[] pos=msg.split("/");
-    System.out.println(pos);
     int num=Integer.parseInt(pos[0]);
     Viaggio v=servizio.getV2();
     boolean b;

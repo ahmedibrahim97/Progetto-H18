@@ -101,8 +101,8 @@
                         <th>#</th> 
                         <th>Partenza</th>
                         <th>Arrivo</th> 
-                        <th>Scambio</th>
-                        <th>Scalo</th>  
+                        <th>cambio</th>
+                        <th>Stazione cambio</th>  
                         <th>Compagnia</th>
                         <th>Scegli</th>
                         </tr> </thead> 

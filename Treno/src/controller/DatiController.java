@@ -21,7 +21,7 @@ import model.*;
 
 
 @WebServlet(name="Controller1", urlPatterns={"/Controller1"})
-public class Controller1 extends HttpServlet {
+public class DatiController extends HttpServlet {
 	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,6 +37,7 @@ public class Controller1 extends HttpServlet {
 			DaoServiceInitializer di=dao.getServiceInitializer();
 			di.inits(servizio);
 			DaoRegistrator dbr=dao.getDaoRegistrator();
+			DaoTracker dt=dao.getDaoTracker();
 			request.getSession().setAttribute("dbr",dbr);
 			request.getSession().setAttribute("servizio",servizio);
 			String stp=request.getParameter("partenza");
@@ -52,6 +53,12 @@ public class Controller1 extends HttpServlet {
 		    int k=100000;
 		    int r=random.nextInt(k);
 		    String preno=stp.substring(0,2)+sta.substring(0,2)+r;
+		    while(dt.checkcod(preno)!=0){
+		    	k=10;
+		    	r=random.nextInt(k);
+		        preno=stp.substring(0,2)+sta.substring(0,2)+r;
+		    			
+		    }
 		    request.getSession().setAttribute("preno",preno);
 		    boolean b=false;
 		    request.getSession().setAttribute("b",b);

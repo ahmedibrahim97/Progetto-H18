@@ -16,7 +16,7 @@ import dao.DaoTracker;
  * Servlet implementation class Controller6
  */
 @WebServlet("/Controller6")
-public class Controller6 extends HttpServlet {
+public class TrackController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

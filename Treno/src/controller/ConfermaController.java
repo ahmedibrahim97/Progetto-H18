@@ -17,7 +17,7 @@ import model.*;
 
 
 @WebServlet(name="Controller4", urlPatterns={"/Controller4"})
-public class Controller4 extends HttpServlet {
+public class ConfermaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

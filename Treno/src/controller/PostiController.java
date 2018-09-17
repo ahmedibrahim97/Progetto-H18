@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet(name="Controller2", urlPatterns={"/Controller2"})
-public class Controller2 extends HttpServlet {
+public class PostiController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
 	

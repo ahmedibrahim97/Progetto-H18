@@ -14,7 +14,7 @@ import model.*;
 
 
 @WebServlet(name="Controller3", urlPatterns={"/Controller3"})
-public class Controller3 extends HttpServlet {
+public class CambioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	
@@ -33,7 +33,7 @@ public class Controller3 extends HttpServlet {
 		        int i=servizio.returncompagnia(servizio.getV1().getCodviaggio().split("-")[0]);
 		        int j=servizio.getCompagnie().get(i).returnviaggio(servizio.getV1().getCodviaggio());
 		        servizio.getCompagnie().get(i).getViaggi().get(j).getRegistro().aggiungiriservazione(posto,pr.getStazionepartenza(),pr.getStazionearrivo());
-		        //out.print(servizio.getV1().getRegistro().checkposto("3A", pr.getStazionepartenza(),pr.getStazionearrivo(),servizio.getV1().getPercorso(),servizio.getV1().getModalita()));
+		        
 		       
 		    }
 		    if(servizio.getV2()!=null){

@@ -26,11 +26,12 @@
     </head>
     <body>
         <%
-        	String[] pos=request.getSession().getAttribute("msg").toString().split("/");
+        	String msg=request.getSession().getAttribute("msg").toString();
+        	String[] pos=msg.split("/");
         	Prenotazione pr=(Prenotazione)request.getSession().getAttribute("pr"); 
         	int num=Integer.parseInt(pos[0]);
 		    out.print("<center><h1>");
-            out.print(pos[1].split("_")[0]);
+            out.print(pos[6].split(":")[0]);
             out.print("</h1></center>");
         %>
         <table style="border:1; align:center; margin-bottom:2px;">
@@ -54,7 +55,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -67,7 +68,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -80,7 +81,7 @@
                                 if(k==2){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -93,7 +94,7 @@
                                 if(k==3){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -124,7 +125,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -137,7 +138,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewriepilogo.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }

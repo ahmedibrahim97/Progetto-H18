@@ -1,12 +1,11 @@
-<jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <html>
 <head>
-  <title>Home</title>
+  <title>Conferma</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="arrivederci.css">
+    <link rel="stylesheet" href="style3.css">
 
    
 </head>
@@ -39,26 +38,21 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<center>
-<div class="alert alert-success" role="alert">
-<p><h3>PRENOTAZIONE AVVENUTA CON SUCCESSO!</h3></p>
 
 
+<div class="jumbotron">
+     <form class="formtracking" action="Controller7" method="get">
+
+     <p >Confermi la cancellazione ?
+       
+      <input class="btn btn-success" type="submit" value="Conferma">
+      </p>
+		</div>
+
+    </form>
 </div>
-</center>
-<p style:"backgroung-font:#fff"><h4>il tuo track code è:
 
-<%
 
-out.print(session.getAttribute("preno").toString());
-
-%>
-</h4>
- </p>
- 
- <button type="button" class="btn btn-default" aria-label="Left Align">
- <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-</button>
 
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

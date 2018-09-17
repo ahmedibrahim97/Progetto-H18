@@ -9,14 +9,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DaoRegistrator extends Thread{
+public class DaoRegistrator{
 	
 	private DaoFactory Dao;
-	private String CodViaggio;
-	private String stp;
-	private String sta;
-	private String pt;
-	
+
 
 	/**
 	 * costruttore
@@ -28,14 +24,14 @@ public class DaoRegistrator extends Thread{
 		
 	}
 	
-	@Override
-	public void run(){
+	
+	public void uploadregistro(String CodViaggio,String stp,String sta,String pt,String prenotazione){
 		
 		try{
 			Connection connection=Dao.getConnection();
             Statement st=connection.createStatement();
-            String query=String.format("insert into REGISTRO(CODVIAGGIO,STAZIONEP,STAZIONEA,POSTO)VALUES('%s','%s','%s','%s')",
-                         CodViaggio,stp,sta,pt);
+            String query=String.format("insert into REGISTRO(CODVIAGGIO,STAZIONEP,STAZIONEA,POSTO,PRENOTAZIONE)VALUES('%s','%s','%s','%s','%s')",
+                         CodViaggio,stp,sta,pt,prenotazione);
             st.executeUpdate(query);
         }
         catch(SQLException e){
@@ -43,25 +39,41 @@ public class DaoRegistrator extends Thread{
             System.out.println(e.getMessage());
         }
 		
-		
-		
-	}
-
-	public void setCodViaggio(String codViaggio) {
-		CodViaggio = codViaggio;
-	}
-
-	public void setStp(String stp) {
-		this.stp = stp;
-	}
-
-	public void setSta(String sta) {
-		this.sta = sta;
-	}
-
-	public void setPt(String pt) {
-		this.pt = pt;
+	
 	}
 	
+	public void uploadprenotazioni(String preno,String descr,String mod){
+		
+		try{
+			Connection connection=Dao.getConnection();
+            Statement st=connection.createStatement();
+            String query=String.format("insert into PRENOTAZIONI(ID_PRENOTAZIONE,DESCRIZIONE,MODALITA)VALUES('%s','%s','%s')",
+                        preno,descr,mod);
+            st.executeUpdate(query);
+        }
+        catch(SQLException e){
+            
+            System.out.println(e.getMessage());
+        }
+		
+	
+	}
+	
+public void uploadprenotazioni_posto(String preno,String pt,String mod){
+		
+		try{
+			Connection connection=Dao.getConnection();
+            Statement st=connection.createStatement();
+            String query=String.format("insert prenotazioni_posto(ID_PRENOTAZIONE,POSTO,MODALITA)VALUES('%s','%s','%s')",
+                        preno,pt,mod);
+            st.executeUpdate(query);
+        }
+        catch(SQLException e){
+            
+            System.out.println(e.getMessage());
+        }
+		
+	
+	}
 	
 }

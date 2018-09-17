@@ -1,0 +1,65 @@
+body{
+    padding-top: 80px;
+    background-color: #fff
+}
+
+
+.dove-andare{
+    font-size: 18px;
+    height: 44px;
+    line-height: 0px;
+    margin-bottom: 0px;
+    margin-left: 380px;
+}
+
+.navbar-brand{
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-nav > li > a {
+
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.carousel-inner > .item {
+    min-height: 350px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.jumbotron{
+    position: relative;
+    margin-left: 17%;
+    margin-top:200px;
+    box-shadow: 10px 10px 5px #dedede;
+    border-radius: 10px 10px 10px 10px;
+    max-height: 800px;
+    max-width: 900px;
+}
+
+
+
+.form-tracking{
+
+    max-width: 200px;
+}
+
+.botton{
+	
+	margin-top:30px;
+	margin-left:400px;
+}
+
+input {
+	
+	max-width:500px;
+	margin-left:183px;
+	
+}
+
+h4{
+	margin-left:615px;
+}

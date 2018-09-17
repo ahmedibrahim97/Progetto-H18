@@ -159,48 +159,48 @@ insert into PREZZI(COMPAGNIA_NOME,TIPOLOGIA,PREZZO)VALUES('Italo','SECONDA_CUCCE
 
 
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-0','Italo','Italo-Treno0','linea1','DIRETTA','2018-09-10 08:00');
+values('Italo-0','Italo','Italo-Treno0','linea1','DIRETTA','2018-09-20 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-1','Italo','Italo-Treno1','linea1','INVERSA','2018-09-10 06:00');
+values('Italo-1','Italo','Italo-Treno1','linea1','INVERSA','2018-09-20 06:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-2','Italo','Italo-Treno2','linea2','DIRETTA','2018-09-10 09:40');
+values('Italo-2','Italo','Italo-Treno2','linea2','DIRETTA','2018-09-20 09:40');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-3','Italo','Italo-Treno4','linea2','INVERSA','2018-09-10 07:00');
+values('Italo-3','Italo','Italo-Treno4','linea2','INVERSA','2018-09-20 07:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-4','Italo','Italo-Treno5','linea3','DIRETTA','2018-09-10 08:00');
+values('Italo-4','Italo','Italo-Treno5','linea3','DIRETTA','2018-09-20 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-5','Italo','Italo-Treno3','linea3','INVERSA','2018-09-10 08:00');
+values('Italo-5','Italo','Italo-Treno3','linea3','INVERSA','2018-09-20 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-6','Italo','Italo-Treno0','linea1','DIRETTA','2018-09-11 08:00');
+values('Italo-6','Italo','Italo-Treno0','linea1','DIRETTA','2018-09-21 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-7','Italo','Italo-Treno1','linea1','INVERSA','2018-09-11 06:00');
+values('Italo-7','Italo','Italo-Treno1','linea1','INVERSA','2018-09-21 06:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-8','Italo','Italo-Treno2','linea2','DIRETTA','2018-09-11 09:40');
+values('Italo-8','Italo','Italo-Treno2','linea2','DIRETTA','2018-09-21 09:40');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-9','Italo','Italo-Treno4','linea2','INVERSA','2018-09-11 07:00');
+values('Italo-9','Italo','Italo-Treno4','linea2','INVERSA','2018-09-21 07:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-10','Italo','Italo-Treno5','linea3','DIRETTA','2018-09-11 08:00');
+values('Italo-10','Italo','Italo-Treno5','linea3','DIRETTA','2018-09-21 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Italo-12','Italo','Italo-Treno3','linea3','INVERSA','2018-09-11 08:00');
+values('Italo-12','Italo','Italo-Treno3','linea3','INVERSA','2018-09-21 08:00');
 
 
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-0','Trenitalia','Trenitalia-Treno0','linea1','DIRETTA','2018-09-10 09:00');
+values('Trenitalia-0','Trenitalia','Trenitalia-Treno0','linea1','DIRETTA','2018-09-20 09:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-1','Trenitalia','Trenitalia-Treno1','linea1','INVERSA','2018-09-10 06:15');
+values('Trenitalia-1','Trenitalia','Trenitalia-Treno1','linea1','INVERSA','2018-09-20 06:15');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-2','Trenitalia','Trenitalia-Treno2','linea2','DIRETTA','2018-09-10 10:00');
+values('Trenitalia-2','Trenitalia','Trenitalia-Treno2','linea2','DIRETTA','2018-09-20 10:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-3','Trenitalia','Trenitalia-Treno3','linea2','INVERSA','2018-09-10 07:30');
+values('Trenitalia-3','Trenitalia','Trenitalia-Treno3','linea2','INVERSA','2018-09-20 07:30');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-4','Trenitalia','Trenitalia-Treno4','linea3','DIRETTA','2018-09-10 07:30');
+values('Trenitalia-4','Trenitalia','Trenitalia-Treno4','linea3','DIRETTA','2018-09-20 07:30');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-5','Trenitalia','Trenitalia-Treno5','linea3','INVERSA','2018-09-10 08:00');
+values('Trenitalia-5','Trenitalia','Trenitalia-Treno5','linea3','INVERSA','2018-09-20 08:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-6','Trenitalia','Trenitalia-Treno0','linea1','DIRETTA','2018-09-11 09:00');
+values('Trenitalia-6','Trenitalia','Trenitalia-Treno0','linea1','DIRETTA','2018-09-21 09:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-7','Trenitalia','Trenitalia-Treno1','linea1','INVERSA','2018-09-11 06:15');
+values('Trenitalia-7','Trenitalia','Trenitalia-Treno1','linea1','INVERSA','2018-09-21 06:15');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-8','Trenitalia','Trenitalia-Treno2','linea2','DIRETTA','2018-09-11 10:00');
+values('Trenitalia-8','Trenitalia','Trenitalia-Treno2','linea2','DIRETTA','2018-09-21 10:00');
 insert into viaggio(CODVIAGGIO,COMPAGNIA_NOME,TRENO_CODTRENO,ITINERARI_NOME,MODALITA,DATA_ORA)
-values('Trenitalia-9','Trenitalia','Trenitalia-Treno3','linea2','INVERSA','2018-09-11 07:30');
+values('Trenitalia-9','Trenitalia','Trenitalia-Treno3','linea2','INVERSA','2018-09-21 07:30');

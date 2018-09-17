@@ -45,7 +45,7 @@ public class DaoFactory {
 	 */
 	public Connection getConnection() throws SQLException{
 		
-		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver ());
+		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 
 		return DriverManager.getConnection(url,username,password);
 	
@@ -67,5 +67,15 @@ public class DaoFactory {
 	public DaoRegistrator getDaoRegistrator(){
 		
 		return new DaoRegistrator(this);
+	}
+	
+	
+	public DaoTracker getDaoTracker(){
+		
+		return new DaoTracker(this);
+	}
+	
+	public DaoCanceller getDaoCanceller(){
+		return new DaoCanceller(this);
 	}
 }

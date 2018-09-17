@@ -4,7 +4,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    String[] pos=session.getAttribute("msg").toString().split("/");
+	String msg=(String)session.getAttribute("msg");
+    String[] pos=msg.toString().split("/");
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     
     int num=Integer.parseInt(pos[0]);
@@ -34,9 +35,12 @@
     </head>
     <body>
         <%
-                out.print("<center><h1>");
-                out.print(pos[1].split("_")[0]);
-                out.print("</h1></center>");
+        	out.print("<center><h3><p>");
+        	out.print(pos[2]+">>>>"+pos[3]+" "+pos[4]);
+        	out.print("</p><p>"+pos[8]+"</p><p>");
+        	out.print(pos[9].split(":")[0]);
+        	out.print("</p></h3></center>");
+     
         %>
         <table style="border:1; align:center; margin-bottom:2px;">
             <%  
@@ -59,7 +63,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -72,7 +76,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -85,7 +89,7 @@
                                 if(k==2){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -98,7 +102,7 @@
                                 if(k==3){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -129,7 +133,7 @@
                                 if(k==0){
                                     out.print("<tr><td id=\""+servizio.visualizzaposti(num,v).get(i).getPosti().get(j).toString()+"\""+">");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }
@@ -142,7 +146,7 @@
                                 if(k==1){
                                     out.print("<td>");
                                     if(b==true){
-                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+pos[1]+"/"+pos[2]+"\">");
+                                    out.print("<a href=\"viewposto2.jsp?param="+num+"/"+s+"/"+msg+"\">");
                                     out.print(s);
                                     out.print("<a/>");
                                     }

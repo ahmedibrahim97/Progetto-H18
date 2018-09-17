@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS `SERVIZIO` ;
+CREATE DATABASE IF NOT EXISTS `servizioferroviario` ;
 
-use `SERVIZIO`;
+use `servizioferroviario`;
 
 CREATE TABLE `compagnia` (
   `NOME` varchar(45) NOT NULL,

@@ -47,9 +47,6 @@
 </center>
 
  
- <button type="button" class="btn btn-default" aria-label="Left Align">
- <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-</button>
 
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

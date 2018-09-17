@@ -1,0 +1,36 @@
+body{
+    padding-top: 80px;
+    background-color: #fff
+}
+
+
+.dove-andare{
+    font-size: 18px;
+    height: 44px;
+    line-height: 0px;
+    margin-bottom: 0px;
+    margin-left: 380px;
+}
+
+.navbar-brand{
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-nav > li > a {
+
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.immagine {
+	min-height:200px;
+	
+	background-image:url(Images/treno8.jpg);
+	background-attachment: fixed;
+                background-color: black;
+               
+                background-repeat: no-repeat;
+                background-position: center center;;
+}

@@ -1,0 +1,41 @@
+body{
+    padding-top: 80px;
+    background-color: #fff
+}
+
+td{
+   padding: 10px;
+}
+.box{
+                
+                width: 70%;
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: burlywood;
+}
+
+.dove-andare{
+    font-size: 18px;
+    height: 44px;
+    line-height: 0px;
+    margin-bottom: 0px;
+    margin-left: 380px;
+}
+
+.navbar-brand{
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-nav > li > a {
+
+    height: 80px;
+    line-height: 50px;
+
+}
+
+.carousel-inner > .item {
+    min-height: 350px;
+    background-size: cover;
+    background-position: center center;
+}

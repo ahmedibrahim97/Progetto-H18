@@ -23,7 +23,7 @@ public class TrackController extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 	try{
 			PrintWriter out =response.getWriter();
-			String Cod=request.getParameter("code");
+			String Cod=request.getParameter("code").toUpperCase();
 			DaoFactory dao=DaoFactory.getInstance();
 			DaoTracker dt=dao.getDaoTracker();
 			int k=dt.checkcod(Cod);

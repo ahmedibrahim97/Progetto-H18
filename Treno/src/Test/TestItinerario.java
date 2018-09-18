@@ -1,6 +1,7 @@
 package Test;
 
 import model.*;
+
 import static org.junit.Assert.*;
 
 import java.util.HashMap;

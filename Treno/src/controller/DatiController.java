@@ -40,8 +40,8 @@ public class DatiController extends HttpServlet {
 			DaoTracker dt=dao.getDaoTracker();
 			request.getSession().setAttribute("dbr",dbr);
 			request.getSession().setAttribute("servizio",servizio);
-			String stp=request.getParameter("partenza");
-		    String sta=request.getParameter("arrivo");
+			String stp=request.getParameter("partenza").toUpperCase();
+		    String sta=request.getParameter("arrivo").toUpperCase();
 		    String datap=request.getParameter("dataAndata");
 		    Date dp=str.parse(datap);
 		    String mod=request.getParameter("modalita");
@@ -97,10 +97,10 @@ public class DatiController extends HttpServlet {
 		        }
 		   
 		  
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			
 			e.printStackTrace();
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("errorindex.jsp");
 		}
 	
 	}

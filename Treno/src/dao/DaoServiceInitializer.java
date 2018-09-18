@@ -25,6 +25,8 @@ public class DaoServiceInitializer {
      * costruttore
      * @param Dao
      */
+    
+    
     public DaoServiceInitializer(DaoFactory Dao){
         	this.Dao=Dao;
         	this.compagnie=new ArrayList();
@@ -32,7 +34,27 @@ public class DaoServiceInitializer {
     }
        
     
-    /**
+    public ArrayList<Compagnia> getCompagnie() {
+		return compagnie;
+	}
+
+
+	public void setCompagnie(ArrayList<Compagnia> compagnie) {
+		this.compagnie = compagnie;
+	}
+
+
+	public ArrayList<Itinerario> getI() {
+		return I;
+	}
+
+
+	public void setI(ArrayList<Itinerario> i) {
+		I = i;
+	}
+
+
+	/**
      * metodo che carica i dati dal database al sistema ferroviario
      * @param s servizioferroviario di cui si vuole settare i componenti
      */
@@ -122,26 +144,31 @@ public class DaoServiceInitializer {
             rs1=st.executeQuery(query);
             while(rs1.next()){
                 String cod=rs1.getString("CODVIAGGIO");
+               
                 String treno=rs1.getString("TRENO_CODTRENO");
                 String linea=rs1.getString("ITINERARI_NOME");
                 String mod=rs1.getString("MODALITA");
                 DateFormat str=new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 Date data=str.parse(rs1.getString("DATA_ORA"));
                 Viaggio v;
+               
                 int j;
                 for(j=0;j<Modalita.values().length;j++){
                     if(mod.equals(Modalita.values()[j].name())){
                        v=new Viaggio(compagnie.get(i).getTreni().get(treno),Iti.get(linea),data,Modalita.values()[j]);
                        v.setCodviaggio(cod);
-                       String sql1=String.format("select * from registro where CODVIAGGIO='%s'",cod);
+                     /*  String sql1=String.format("select * from registro where CODVIAGGIO='%s'",cod);
                        ResultSet rs2=st1.executeQuery(sql1);
-                       while(rs2.next()){
+                      
+                     /*  while(rs2.next()){
                            String p=rs2.getString("POSTO");
                            String stp=rs2.getString("STAZIONEP");
                            String sta=rs2.getString("STAZIONEA");
                            v.getRegistro().aggiungiriservazione(p, stp, sta);
+                           System.out.println(cod);
                            
-                       }
+                       }*/
+                    
                        compagnie.get(i).getViaggi().add(v);
                        
                     }
@@ -150,10 +177,11 @@ public class DaoServiceInitializer {
             }
           
         }
-        s.setCompagnie(compagnie);
-        s.setItinerari(I);
+
        
         }
+        
+      
         catch(Exception e){
         
             System.out.println(e.getMessage());
@@ -162,6 +190,36 @@ public class DaoServiceInitializer {
       
 }
 	
-	
+    public void checktrack(Viaggio v){
+    	
+    	try{
+    		
+    		
+    		int i;
+        	connection=Dao.getConnection();
+        	Statement st=connection.createStatement();
+        	String cod;
+           
+                cod=v.getCodviaggio();
+            	String sql1=String.format("select * from registro where CODVIAGGIO='%s'",cod);
+            	ResultSet rs2=st.executeQuery(sql1);
+            	while(rs2.next()){
+            		String p=rs2.getString("POSTO");
+            		String stp=rs2.getString("STAZIONEP");
+            		String sta=rs2.getString("STAZIONEA");
+            		v.getRegistro().aggiungiriservazione(p, stp, sta);
+            	}
+              
+                
+            
+        	
+    	   }
+    	   catch(Exception e){
+    		   e.printStackTrace();
+    		   
+    	   }
+    	
+    	
+    }
 
 }

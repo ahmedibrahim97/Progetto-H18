@@ -26,7 +26,7 @@ public class DatiController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		Servizioferroviario servizio =(Servizioferroviario)session.getAttribute("servizio");
+		//Servizioferroviario servizio =(Servizioferroviario)session.getAttribute("servizio");
 		DateFormat str=new SimpleDateFormat("yyyy-MM-dd");
 		
 		response.setContentType("text/html;charset=UTF-8");
@@ -35,11 +35,18 @@ public class DatiController extends HttpServlet {
 			DaoFactory dao=DaoFactory.getInstance();
 			request.getSession().setAttribute("dao",dao);
 			DaoServiceInitializer di=dao.getServiceInitializer();
-			di.inits(servizio);
+			Servizioferroviario s=new Servizioferroviario();
+			di.inits(s);
+			s.getCompagnie().addAll(0,di.getCompagnie());
+			s.getItinerari().addAll(0,di.getI());
+			request.getSession().setAttribute("servizio",s);
+			request.getSession().setAttribute("dao",dao);
+			
 			DaoRegistrator dbr=dao.getDaoRegistrator();
 			DaoTracker dt=dao.getDaoTracker();
 			request.getSession().setAttribute("dbr",dbr);
-			request.getSession().setAttribute("servizio",servizio);
+			
+
 			String stp=request.getParameter("partenza").toUpperCase();
 		    String sta=request.getParameter("arrivo").toUpperCase();
 		    String datap=request.getParameter("dataAndata");
@@ -49,6 +56,8 @@ public class DatiController extends HttpServlet {
 		    num=Integer.parseInt(request.getParameter("numeroadulti"));
 		    request.getSession().setAttribute("num",num);
 		    request.getSession().setAttribute("mod",mod);
+
+		 
 		    Random random=new Random();
 		    int k=100000;
 		    int r=random.nextInt(k);

@@ -9,6 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+	servizio=(Servizioferroviario)session.getAttribute("servizio");
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
     Prenotazione pr1=new Prenotazione(pr.getStazionepartenza(),pr.getStazionearrivo(),pr.getDatapartenza());
     Prenotazione pr2=new Prenotazione(pr.getStazionearrivo(),pr.getStazionepartenza(),pr.getDataritorno());
@@ -115,7 +116,7 @@
                         	<tbody>
                         
    <%
-   			try{
+   			
    				
    					boolean bool=true;
 					if(servizio.checktreno(pr1).length==0 || servizio.checktreno(pr2).length==0){
@@ -173,9 +174,7 @@
                      
                  }
                     
-   			}catch(Exception ex){
-   				response.sendRedirect("Controller5");
-   			}  
+
                     
                         
                 %>

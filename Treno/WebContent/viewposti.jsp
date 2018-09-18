@@ -1,5 +1,6 @@
 <%@page import="java.util.*"%>
 <%@page import="model.*"%>
+<%@page import="dao.*"  %>>
 <jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,6 +51,7 @@
 		    out.print("<center><h1>");
             out.print(pos[6].split(":")[0]);
             out.print("</h1></center>");
+            DaoFactory dao=(DaoFactory)request.getSession().getAttribute("dao");
         %>
        
             <%  
@@ -57,6 +59,9 @@
                 int i,j,k;
                 boolean b;
                 Viaggio v=servizio.getV1();
+                DaoServiceInitializer di=dao.getServiceInitializer();
+                di.checktrack(v);
+                
                 if(Tipologia.values()[num-1]==Tipologia.PRIMA_STANDARD || Tipologia.values()[num-1]==Tipologia.SECONDA_STANDARD){
                    
                     for(i=0;i<servizio.visualizzaposti(num,v).size();i++){

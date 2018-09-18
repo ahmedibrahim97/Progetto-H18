@@ -6,8 +6,10 @@
 <!DOCTYPE html>
 <%
 
-    
+    servizio=(Servizioferroviario)session.getAttribute("servizio");
     Prenotazione pr=(Prenotazione)session.getAttribute("pr");
+
+    
 
 %>
 <html>
@@ -106,7 +108,7 @@
                         	<tbody>
                         
    <%
-   			try{
+   			
    					
    					
    					if(servizio.checktreno(pr).length==0){
@@ -156,10 +158,7 @@
                     	}
                     }
                     
-   				}catch(Exception ex){
-   					response.sendRedirect("Controller5");
-   					
-   				}
+   				
                     
                   
                     

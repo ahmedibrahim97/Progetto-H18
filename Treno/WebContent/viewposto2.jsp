@@ -1,4 +1,4 @@
-
+<%@page import="dao.*"%>
 <%@page import="model.*"%>
 <jsp:useBean id="servizio" class="model.Servizioferroviario" scope="session" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -8,7 +8,10 @@
     String msg=request.getParameter("param");
     String[] pos=msg.split("/");
     int num=Integer.parseInt(pos[0]);
+    DaoFactory dao=(DaoFactory)request.getSession().getAttribute("dao");
+    DaoServiceInitializer di=dao.getServiceInitializer();   
     Viaggio v=servizio.getV2();
+    di.checktrack(v);
     boolean b;
     
 

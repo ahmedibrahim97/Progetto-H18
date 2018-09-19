@@ -178,7 +178,9 @@ public class DaoServiceInitializer {
           
         }
 
-       
+       s.getCompagnie().addAll(compagnie);
+       s.getItinerari().addAll(I);
+    	   
         }
         
       

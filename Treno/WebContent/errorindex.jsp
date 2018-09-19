@@ -75,20 +75,20 @@
         <div class="item active" style="background-image: url(Images/treno5.jpg);">
 		
 
-			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserire dati coerenti</h3></div></center>
+			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserisci di nuovo i dati</h3></div></center>
 
             <div class="carousel-caption">
                 <h1>Viaggia con Noi...</h1>
             </div>
         </div>
         <div class="item" style="background-image: url(Images/treno1.jpg);">
-			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserire dati coerenti</h3></div></center>
+			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserisci di nuovo i dati</h3></div></center>
             <div class="carousel-caption">
                 <h1>Viaggia con Noi...</h1>
             </div>
         </div>
         <div class="item" style="background-image: url(Images/treno6.jpg);">
-			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserire dati coerenti</h3></div></center>
+			<center><div class="alert alert-danger" role="alert"><h3>Errore: inserisci di nuovo i dati</h3></div></center>
             <div class="carousel-caption">
                 <h1>Viaggia con Noi...</h1>
             </div>

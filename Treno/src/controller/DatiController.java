@@ -37,8 +37,8 @@ public class DatiController extends HttpServlet {
 			DaoServiceInitializer di=dao.getServiceInitializer();
 			Servizioferroviario s=new Servizioferroviario();
 			di.inits(s);
-			s.getCompagnie().addAll(0,di.getCompagnie());
-			s.getItinerari().addAll(0,di.getI());
+			/*s.getCompagnie().addAll(0,di.getCompagnie());
+			s.getItinerari().addAll(0,di.getI());*/
 			request.getSession().setAttribute("servizio",s);
 			request.getSession().setAttribute("dao",dao);
 			
